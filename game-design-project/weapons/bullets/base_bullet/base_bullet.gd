@@ -51,6 +51,7 @@ func _handle_tile_map_layer_collision() -> void:
 func _on_bullet_hurt_box_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):
 		body.take_damage(bullet_damage)
+		bullet_entity_penetration -= 1
 	destroy()
 		
 func _on_bullet_life_timeout() -> void:
