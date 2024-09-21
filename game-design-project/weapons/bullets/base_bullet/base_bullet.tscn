@@ -13,6 +13,7 @@ script = ExtResource("1_6lgjb")
 shape = SubResource("RectangleShape2D_c4eo2")
 
 [node name="bullet_hurt_box" type="Area2D" parent="."]
+collision_mask = 4
 
 [node name="bullet_hurt_box_collision" type="CollisionShape2D" parent="bullet_hurt_box"]
 shape = SubResource("RectangleShape2D_yey3d")

@@ -22,7 +22,7 @@ func get_input() -> void:
 	_process(delta: float) -> void: function
 	in a different class
 	'''
-	if Input.is_action_pressed("ui_accept"):
+	if Input.is_action_pressed("left_click"):
 		shoot()
 		
 func shoot() -> void:
