@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bya1curklquun"]
+
+[ext_resource type="Script" path="res://base_bullet.gd" id="1_6lgjb"]
+[ext_resource type="Texture2D" uid="uid://cqptebpn0wmk0" path="res://icon.svg" id="2_56vyw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4eo2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yey3d"]
+
+[node name="base_bullet" type="CharacterBody2D"]
+script = ExtResource("1_6lgjb")
+
+[node name="bullet_collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c4eo2")
+
+[node name="bullet_hurt_box" type="Area2D" parent="."]
+
+[node name="bullet_hurt_box_collision" type="CollisionShape2D" parent="bullet_hurt_box"]
+shape = SubResource("RectangleShape2D_yey3d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_56vyw")
+
+[node name="bullet_life" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="body_entered" from="bullet_hurt_box" to="." method="_on_bullet_hurt_box_body_entered"]
+[connection signal="timeout" from="bullet_life" to="." method="_on_bullet_life_timeout"]
