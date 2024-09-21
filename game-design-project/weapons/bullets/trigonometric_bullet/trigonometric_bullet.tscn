@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://co1boyc3d5utd"]
 
-[ext_resource type="PackedScene" uid="uid://bya1curklquun" path="res://base_bullet.tscn" id="1_oa764"]
-[ext_resource type="Script" path="res://trigonometric_bullet.gd" id="2_po35g"]
+[ext_resource type="PackedScene" uid="uid://bya1curklquun" path="res://weapons/bullets/base_bullet/base_bullet.tscn" id="1_oa764"]
+[ext_resource type="Script" path="res://weapons/bullets/trigonometric_bullet/trigonometric_bullet.gd" id="2_po35g"]
 
 [node name="trigonometric_bullet" instance=ExtResource("1_oa764")]
 script = ExtResource("2_po35g")

@@ -1,6 +1,10 @@
 extends Line2D
 class_name Trals
 
+'''
+when attached to a node, creates a trail behind the node
+'''
+
 var queue : Array
 @export var MAX_LENGTH : int = 25
 

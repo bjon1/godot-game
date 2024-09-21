@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c42ch6c6givx4"]
 
-[ext_resource type="Script" path="res://base_gun.gd" id="1_eq05o"]
+[ext_resource type="Script" path="res://weapons/base_gun/base_gun.gd" id="1_eq05o"]
 
 [sub_resource type="Animation" id="Animation_kvti6"]
 resource_name = "shoot"

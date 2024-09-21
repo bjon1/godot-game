@@ -8,7 +8,7 @@ to not be affected by the weapon's position
 after firing.
 '''
 
-var bullet_preload = preload("res://base_bullet.tscn")
+var bullet_preload = preload("res://weapons/bullets/base_bullet/base_bullet.tscn")
 @onready var animation_player : AnimationPlayer = get_node("AnimationPlayer")
 @onready var fire_rate_timer : Timer = get_node("fire_rate_timer")
 

@@ -1,4 +1,4 @@
-extends "res://base_character.gd"
+extends "res://actors/character/base_character/base_character.gd"
 
 '''
 Note:
