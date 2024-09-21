@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://da1knte6fulgs"]
-
-[ext_resource type="Script" path="res://misc/utilities/trail/trail.gd" id="1_8tx1l"]
-
-[node name="Trail" type="Line2D"]
-top_level = true
-width = 5.0
-script = ExtResource("1_8tx1l")
