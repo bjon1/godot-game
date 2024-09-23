@@ -1,3 +1,4 @@
+@icon("res://assets/icons/heavy-bullets.png")
 extends CharacterBody2D
 class_name Bullet
 
@@ -19,9 +20,9 @@ var collision : KinematicCollision2D
 var direction : float
 var spawn_rotation : float
 var spawn_position : Vector2
-var bullet_damage : float
+var damage : float
 
-@export var speed : float = 600.0
+@export var speed : float = 800
 @export var bullet_tile_damage : int = 1
 @export var bullet_tile_penetration : int = 1
 @export var bullet_entity_penetration : int = 1
@@ -50,7 +51,7 @@ func _handle_tile_map_layer_collision() -> void:
 			
 func _on_bullet_hurt_box_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):
-		body.take_damage(bullet_damage)
+		body.take_damage(damage)
 		bullet_entity_penetration -= 1
 	destroy()
 		
