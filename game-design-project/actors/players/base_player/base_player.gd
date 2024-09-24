@@ -1,4 +1,5 @@
-extends "res://actors/character/base_character/base_character.gd"
+extends Base_Character
+class_name Base_Player
 
 '''
 Note:
@@ -12,11 +13,24 @@ enum{UP, DOWN}
 var current_weapon : Node2D
 
 func _ready() -> void:
-	current_weapon = weapons.get_child(0)
+	#current_weapon = weapons.get_child(0)
+	pass
 
 func _process(delta: float) -> void:
-	var mouse_direction : Vector2 = (get_global_mouse_position() - global_position).normalized()
-	#handle player movement
+	#var mouse_direction : Vector2 = (get_global_mouse_position() - global_position).normalized()
+	var direction : float = Input.get_axis("move_left", "move_right")
+	if direction:
+		velocity.x = direction * speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+	
+	direction = Input.get_axis("move_up", "move_down")
+	if direction:
+		velocity.y = direction * speed
+	else:
+		velocity.y = move_toward(velocity.x, 0, speed)
+	
+	move_and_slide()
 	
 func _switch_weapon(direction : int) -> void:
 	var index : int = current_weapon.get_index()

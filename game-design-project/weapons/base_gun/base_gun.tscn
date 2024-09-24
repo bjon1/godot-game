@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://weapons/base_gun/base_gun.gd" id="1_eq05o"]
 [ext_resource type="Resource" uid="uid://se3qkjnnovif" path="res://weapons/base_gun/base_gun.tres" id="2_5yahl"]
 
-[sub_resource type="Animation" id="Animation_kvti6"]
-resource_name = "shoot"
-
 [sub_resource type="Animation" id="Animation_lx6b3"]
 resource_name = "reload"
+
+[sub_resource type="Animation" id="Animation_kvti6"]
+resource_name = "shoot"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nbxqk"]
 _data = {

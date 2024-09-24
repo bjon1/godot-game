@@ -5,8 +5,8 @@
 
 [node name="trigonometric_bullet" instance=ExtResource("1_oa764")]
 script = ExtResource("2_po35g")
-frequency = 40.0
-amplitude = 10.0
+frequency = null
+amplitude = null
 
 [node name="Trail" parent="." index="4"]
 MAX_LENGTH = 25

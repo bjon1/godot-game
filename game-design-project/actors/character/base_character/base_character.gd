@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Base_Character
 '''
 Note:
 	World exists on collision and mask layer 1
@@ -8,7 +8,6 @@ Note:
 '''
 
 @export var base_character_debug : bool = false
-
 @export var max_health : float = 100.0
 @export var health : float = 100.0
 @export var speed : float = 100.0

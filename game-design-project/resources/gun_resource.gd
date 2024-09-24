@@ -1,7 +1,7 @@
 extends Resource
 class_name Gun_Resource
 
-const max = 2000000000
+const stat_cap = 2000000000
 
 var fire_rate_timer : Timer = Timer.new()
 var reload_speed_timer : Timer = Timer.new()
@@ -15,21 +15,21 @@ var charge_time_timer : Timer = Timer.new()
 @export var deactivate_animation : String
 @export var out_of_ammo_animation : String
 
-@export_range(0, max) var ammo_ammount : int					#ammo ammount in gun
-@export_range(0, max) var ammo_reserve : int					#ammo available for reloading
-@export_range(0, max) var magazine_size: int					#amout of ammo to reload
-@export_range(0, max) var max_ammo : int						#max ammo amount allowed at reserve
+@export_range(0, stat_cap) var ammo_ammount : int					#ammo ammount in gun
+@export_range(0, stat_cap) var ammo_reserve : int					#ammo available for reloading
+@export_range(0, stat_cap) var magazine_size: int					#amout of ammo to reload
+@export_range(0, stat_cap) var max_ammo : int						#max ammo amount allowed at reserve
 @export var automatic_fire : bool								#if true weapons fire by holding shoot button
 
 @export var bullet_scene : PackedScene
 @export var damage : float										#damage the gun deals
 @export_range(0, 1) var accuracy : float						#how accurate the gun is in percentage
-@export_range(0, max) var bullet_count : int					#how many bullets should be fired from one shot
+@export_range(0, stat_cap) var bullet_count : int					#how many bullets should be fired from one shot
 @export_range(0,360) var bullet_spread : float
-@export_range(0, max) var bullet_speed : float
-@export_range(0, max) var tile_damage : int
-@export_range(0, max) var tile_penetration : int				#how many tiles the bullet can penetrate before disappearing
-@export_range(0, max) var enemy_penetration : int				#how many enemies the bullet can penetrate before disappearing
+@export_range(0, stat_cap) var bullet_speed : float
+@export_range(0, stat_cap) var tile_damage : int
+@export_range(0, stat_cap) var tile_penetration : int				#how many tiles the bullet can penetrate before disappearing
+@export_range(0, stat_cap) var enemy_penetration : int				#how many enemies the bullet can penetrate before disappearing
 
 #timed variables
 @export_range(0, 300) var fire_rate : float:					#how fast the gun shoots in seconds
@@ -66,6 +66,7 @@ func get_bullet_resource() -> Bullet_Resource:
 	var bullet_resource : Bullet_Resource = Bullet_Resource.new()
 	bullet_resource.damage = damage
 	bullet_resource.speed = bullet_speed
+	bullet_resource.tile_damage = tile_damage
 	bullet_resource.tile_penetration = tile_penetration
 	bullet_resource.enemy_penetration = enemy_penetration
 	return bullet_resource

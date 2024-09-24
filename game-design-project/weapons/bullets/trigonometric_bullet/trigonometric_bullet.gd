@@ -1,4 +1,4 @@
-extends "res://weapons/bullets/base_bullet/base_bullet.gd"
+extends Base_Bullet
 
 enum MODE{
 	SIN, COS, TAN, CSC, SEC, COT, ARCSIN, ARCCOS, ARCTAN, ARCSC, ARCSEC, ARCCOT

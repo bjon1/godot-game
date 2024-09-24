@@ -1,4 +1,5 @@
-extends "res://actors/character/base_character/base_character.gd"
+extends Base_Character
+class_name Base_Enemy
 
 '''
 Note:

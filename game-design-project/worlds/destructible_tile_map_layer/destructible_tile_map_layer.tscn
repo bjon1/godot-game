@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dex5bnpwixrpu"]
+
+[ext_resource type="PackedScene" uid="uid://dfrfdwsnen8sp" path="res://worlds/base_tile_map_layer/base_tile_map_layer.tscn" id="1_1t6s5"]
+[ext_resource type="Script" path="res://worlds/destructible_tile_map_layer/destructible_tile_map_layer.gd" id="2_t5064"]
+
+[node name="destructible_tile_map_layer" instance=ExtResource("1_1t6s5")]
+script = ExtResource("2_t5064")

@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://actors/enemies/base_enemy/base_enemy.gd" id="2_sarbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m741n"]
+size = Vector2(128, 128)
 
 [node name="base_enemy" instance=ExtResource("1_gmky7")]
 collision_layer = 4
@@ -11,10 +12,10 @@ collision_mask = 4
 script = ExtResource("2_sarbm")
 base_enemy_debug = false
 
-[node name="attack_interval_timer" type="Timer" parent="." index="2"]
+[node name="attack_interval_timer" type="Timer" parent="." index="1"]
 autostart = true
 
-[node name="attack_area" type="Area2D" parent="." index="3"]
+[node name="attack_area" type="Area2D" parent="." index="2"]
 collision_layer = 0
 collision_mask = 2
 

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Gun_Resource" load_steps=3 format=3 uid="uid://se3qkjnnovif"]
+
+[ext_resource type="PackedScene" uid="uid://co1boyc3d5utd" path="res://weapons/bullets/trigonometric_bullet/trigonometric_bullet.tscn" id="1_su4n3"]
+[ext_resource type="Script" path="res://resources/gun_resource.gd" id="2_6un5p"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_6un5p")
+weapon_name = "base gun"
+activate_animation = ""
+shoot_animation = ""
+reload_animation = ""
+deactivate_animation = ""
+out_of_ammo_animation = ""
+ammo_ammount = 10
+ammo_reserve = 50
+magazine_size = 2
+max_ammo = 100
+automatic_fire = false
+bullet_scene = ExtResource("1_su4n3")
+damage = 200.0
+accuracy = 0.0
+bullet_count = 4
+bullet_spread = 90.0
+bullet_speed = 800.0
+tile_damage = 0
+tile_penetration = 10
+enemy_penetration = 1000
+fire_rate = 0.0
+burst_delay = 0.0
+reload_speed = 0.0
+charge_time = 0.0

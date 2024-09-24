@@ -1,6 +1,6 @@
 @icon("res://assets/icons/heavy-bullets.png")
 extends CharacterBody2D
-class_name Bullet
+class_name Base_Bullet
 
 '''
 Note:
