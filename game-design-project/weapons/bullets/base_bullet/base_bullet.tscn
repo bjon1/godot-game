@@ -11,16 +11,18 @@ size = Vector2(2, 2)
 size = Vector2(2, 2)
 
 [node name="base_bullet" type="CharacterBody2D"]
+collision_layer = 0
 script = ExtResource("1_6lgjb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.0625, 0.0625)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_uk8n4")
 
 [node name="bullet_collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_c4eo2")
 
 [node name="bullet_hurt_box" type="Area2D" parent="."]
+collision_layer = 0
 collision_mask = 4
 
 [node name="bullet_hurt_box_collision" type="CollisionShape2D" parent="bullet_hurt_box"]
@@ -32,8 +34,7 @@ autostart = true
 
 [node name="Trail" parent="." instance=ExtResource("2_q871u")]
 top_level = true
-width = 2.0
-MAX_LENGTH = 3
+MAX_LENGTH = 50
 gradient_start_color = Color(0.741176, 0.32549, 0, 1)
 gradient_end_color = Color(0.917647, 0.713726, 0, 1)
 
