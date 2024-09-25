@@ -1,7 +1,8 @@
 extends Resource
 class_name Gun_Resource
 
-const stat_cap = 2000000000
+const stat_cap : int = 2000000000
+const timer_cap_min : float = 0.00001
 
 var fire_rate_timer : Timer = Timer.new()
 var reload_speed_timer : Timer = Timer.new()
@@ -35,22 +36,22 @@ var charge_time_timer : Timer = Timer.new()
 @export_range(0, 300) var fire_rate : float:					#how fast the gun shoots in seconds
 	set(value):
 		fire_rate = value
-		fire_rate_timer.set_wait_time(max(fire_rate, 0.00001))
+		fire_rate_timer.set_wait_time(max(fire_rate, timer_cap_min))
 		
 @export_range(0, 300) var burst_delay : float:					#delay between bullets in one shot
 	set(value):
 		burst_delay = value
-		burst_delay_timer.set_wait_time(max(burst_delay, 0.00001))
+		burst_delay_timer.set_wait_time(max(burst_delay, timer_cap_min))
 		
 @export_range(0, 300) var reload_speed : float:					#how long it takes to reload
 	set(value):
 		reload_speed = value
-		reload_speed_timer.set_wait_time(max(reload_speed, 0.00001))
+		reload_speed_timer.set_wait_time(max(reload_speed, timer_cap_min))
 			
 @export_range(0, 300) var charge_time : float:					#how long the weapon needs to charge before shot
 	set(value):
 		charge_time = value
-		charge_time_timer.set_wait_time(max(charge_time, 0.00001))
+		charge_time_timer.set_wait_time(max(charge_time, timer_cap_min))
 		
 func initialize() -> void:
 	'''
@@ -75,18 +76,21 @@ func get_bullet_resource() -> Bullet_Resource:
 func _initialize_fire_rate_timer() -> void:
 	fire_rate_timer.set_autostart(false)
 	fire_rate_timer.set_one_shot(true)
-	fire_rate_timer.set_wait_time(max(fire_rate, 0.00001))
+	fire_rate_timer.set_wait_time(max(fire_rate, timer_cap_min))
 
 func _initialize_reload_speed_timer() -> void:
 	reload_speed_timer.set_autostart(false)
 	reload_speed_timer.set_one_shot(true)
-	reload_speed_timer.set_wait_time(max(reload_speed, 0.00001))
+	reload_speed_timer.set_wait_time(max(reload_speed, timer_cap_min))
 
 func _initialize_burst_delay_timer() -> void:
 	burst_delay_timer.set_autostart(false)
 	burst_delay_timer.set_one_shot(true)
-	burst_delay_timer.set_wait_time(max(burst_delay, 0.00001))
+	burst_delay_timer.set_wait_time(max(burst_delay, timer_cap_min))
 
+func has_burst_delay() -> bool:
+	return burst_delay_timer.get_wait_time() > timer_cap_min
+	
 func calculate_accuracy() -> float:
 	var accuracy_factor = 1 - accuracy
 	return randf_range(-accuracy_factor, accuracy_factor)
