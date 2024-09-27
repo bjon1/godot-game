@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2tdixtadis3x"]
+
+[ext_resource type="PackedScene" uid="uid://d01j0vekxwx5v" path="res://actors/players/base_player/base_player.tscn" id="1_enbtx"]
+[ext_resource type="Script" path="res://actors/players/rectangle_guy/old_rectangle_guy.gd" id="2_0k4na"]
+[ext_resource type="PackedScene" uid="uid://n26ypm64ow3b" path="res://actors/players/rectangle_guy/old_rectangle_guy_sprite.tscn" id="3_jycye"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpttj"]
+size = Vector2(26, 56)
+
+[node name="rectangle_guy" instance=ExtResource("1_enbtx")]
+script = ExtResource("2_0k4na")
+
+[node name="CollisionShape2D" parent="." index="0"]
+visible = false
+disabled = true
+
+[node name="Rectangle_Guy" parent="." index="3" instance=ExtResource("3_jycye")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="4"]
+visible = false
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_rpttj")

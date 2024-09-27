@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://n26ypm64ow3b"]
+
+[ext_resource type="Texture2D" uid="uid://21k5m4xdh2cx" path="res://actors/players/rectangle_guy/sprites/rectangle_player.png" id="1_s4qdi"]
+[ext_resource type="Texture2D" uid="uid://bju5ed0dbvs0t" path="res://actors/players/rectangle_guy/sprites/rectangle_arm.png" id="2_itdv2"]
+
+[sub_resource type="Animation" id="Animation_ufqsp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_8ryr4"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.875), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2nfkj"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0523599, 0.0, -0.0523599, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6clma"]
+_data = {
+"RESET": SubResource("Animation_ufqsp"),
+"idle": SubResource("Animation_8ryr4"),
+"walk": SubResource("Animation_2nfkj")
+}
+
+[node name="Rectangle_Guy" type="Node2D"]
+
+[node name="body" type="Sprite2D" parent="."]
+texture = ExtResource("1_s4qdi")
+
+[node name="arm_left" type="Sprite2D" parent="body"]
+position = Vector2(24, 14)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_itdv2")
+
+[node name="arm_right" type="Sprite2D" parent="body"]
+position = Vector2(-24, 14)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_itdv2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6clma")
+}

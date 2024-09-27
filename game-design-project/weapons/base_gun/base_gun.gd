@@ -9,9 +9,10 @@ to not be affected by the weapon's position
 after firing.
 '''
 
-@export var main_scene : Node2D
+#@export var main_scene : Node2D
 @export var res : Gun_Resource
 
+@onready var main_scene = get_tree().root.get_child(0)
 var is_shooting = false
 
 func _ready() -> void:
