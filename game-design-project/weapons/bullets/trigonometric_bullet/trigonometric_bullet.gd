@@ -13,6 +13,7 @@ var time_passed : float = 0.0
 func _ready() -> void:
 	global_position = spawn_position
 	global_rotation = spawn_rotation
+	set_collision()
 
 func _process(delta: float) -> void:
 	time_passed += delta
@@ -22,4 +23,4 @@ func _process(delta: float) -> void:
 	var motion : Vector2 = offset_position + oscillation
 	
 	collision = move_and_collide(motion)
-	_handle_tile_map_layer_collision()
+	_handle_collision()
