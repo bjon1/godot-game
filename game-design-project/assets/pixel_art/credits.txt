@@ -1,7 +1,8 @@
 Example (at least provide links)
+
 Pixel Art:
 - "Character Sprite" by John Doe (https://example.com) [Licensed under CC BY 4.0]
 - "Background Tileset" by PixelArtMaster from OpenGameArt.org [Public Domain]
 - "UI Icons" by Artist123 [Used under commercial license]
-
-Pixel Art:
+- "Medieval Weapons" by MedievalMore (https://medievalmore.itch.io/free-weapon-icons)
+- "32x32 Guns" by Arlan TR (https://arlantr.itch.io/free-guns-pixelart)

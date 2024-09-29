@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfqu0pp7sgvrl"]
+
+[ext_resource type="Script" path="res://weapons/shotgun/shotgun.gd" id="1_rbpgs"]
+[ext_resource type="PackedScene" uid="uid://bya1curklquun" path="res://weapons/bullets/base_bullet/base_bullet.tscn" id="2_0bopd"]
+[ext_resource type="Texture2D" uid="uid://70tnket6ib7n" path="res://weapons/shotgun/Shotgun-1.png" id="2_m7t73"]
+[ext_resource type="Script" path="res://resources/gun_resource.gd" id="3_n25u3"]
+
+[sub_resource type="Resource" id="Resource_2gkc3"]
+script = ExtResource("3_n25u3")
+weapon_name = ""
+activate_animation = ""
+shoot_animation = ""
+reload_animation = ""
+deactivate_animation = ""
+out_of_ammo_animation = ""
+ammo_ammount = 0
+ammo_reserve = 0
+magazine_size = 0
+max_ammo = 0
+automatic_fire = false
+bullet_scene = ExtResource("2_0bopd")
+damage = 1.0
+accuracy = 1.0
+bullet_count = 3
+bullet_spread = 30.0
+bullet_speed = 600.0
+tile_damage = 1
+tile_penetration = 1
+enemy_penetration = 1
+fire_rate = 0.0
+burst_delay = 0.0
+reload_speed = 0.0
+charge_time = 0.0
+
+[node name="shotgun" type="Node2D"]
+position = Vector2(60, 0)
+script = ExtResource("1_rbpgs")
+res = SubResource("Resource_2gkc3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-30, 5)
+texture = ExtResource("2_m7t73")
