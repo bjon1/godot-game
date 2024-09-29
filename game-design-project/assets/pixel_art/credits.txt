@@ -5,3 +5,5 @@ Pixel Art:
 - "UI Icons" by Artist123 [Used under commercial license]
 
 Pixel Art:
+
+- "Firearms Spritesheets" by Arcade Island (https://arcadeisland.itch.io/guns-asset-pack-v1)

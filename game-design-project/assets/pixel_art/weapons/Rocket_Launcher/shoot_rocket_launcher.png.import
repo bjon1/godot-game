@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cepdl3rm1bko6"
-path="res://.godot/imported/dummy_sprite_sheet.png-4305d8e014a8150e00c36e23be19c0bd.ctex"
+uid="uid://d1jovjp1r2wtr"
+path="res://.godot/imported/shoot_rocket_launcher.png-dc604f5bc83fd4bb9d1e7bad0ef5c01f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pixel_art/dummy_sprite_sheet.png"
-dest_files=["res://.godot/imported/dummy_sprite_sheet.png-4305d8e014a8150e00c36e23be19c0bd.ctex"]
+source_file="res://assets/pixel_art/weapons/Rocket_Launcher/shoot_rocket_launcher.png"
+dest_files=["res://.godot/imported/shoot_rocket_launcher.png-dc604f5bc83fd4bb9d1e7bad0ef5c01f.ctex"]
 
 [params]
 
