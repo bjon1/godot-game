@@ -22,38 +22,44 @@ var direction : Vector2
 var spawn_position : Vector2
 var spawn_rotation : float
 
+@onready var hurt_box : Area2D = $hurt_box
 func _ready() -> void:
 	global_position = spawn_position
 	global_rotation = spawn_rotation
 	direction = Vector2.RIGHT.rotated(spawn_rotation)
+	set_collision()
 
+func set_collision():
+	hurt_box.set_collision_mask_value(res.target_layer, true)
+	
 func _process(delta: float) -> void:
-	#var motion : Vector2 = Vector2(res.speed, 0) * delta
 	var motion : Vector2 = direction * res.speed * delta
 	collision = move_and_collide(motion)
-	_handle_tile_map_layer_collision()
+	_handle_collision()
 
-func _handle_tile_map_layer_collision() -> void:
+func _handle_collision() -> void:
 	if collision == null:
 		return
+	var body : Object = collision.get_collider()
+	if body.is_class("TileMapLayer"):
+		var global_tile_position : Vector2 = (collision.get_position() - collision.get_normal())
+		body.damage_tile(global_tile_position, res.tile_damage)
+		res.tile_penetration -= 1
+	destroy_check()
 	
-	if !collision.get_collider().is_class("TileMapLayer"):
-		return
-	
-	var global_tile_position : Vector2 = (collision.get_position() - collision.get_normal())
-	collision.get_collider().damage_tile(global_tile_position, res.tile_damage)
-	res.tile_penetration -= 1
-	destroy()
-			
-func _on_bullet_hurt_box_body_entered(body: Node2D) -> void:
-	if body.has_method("take_damage"):
-		body.take_damage(res.damage)
-		res.enemy_penetration -= 1
-	destroy()
-		
 func _on_bullet_life_timeout() -> void:
 	queue_free()
 	
-func destroy() -> void:
+func destroy_check() -> void:
 	if res.enemy_penetration < 0 or res.tile_penetration < 0:
+		destroy()
+		
+func destroy() -> void:
 		queue_free()
+
+
+func _on_hurt_box_body_entered(body: Node2D) -> void:
+	if body.has_method("take_damage"):
+		body.take_damage(res.damage)
+		res.enemy_penetration -= 1
+	destroy_check()

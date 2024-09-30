@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://va1vkglml5cu"
-path="res://.godot/imported/placeholder_bullet.png-902452d1435a76c2337ee51930d82001.ctex"
+uid="uid://lj6ycdxbbl6t"
+path="res://.godot/imported/shoot_ak.png-71f0e3ae05965781cc51f75a335e012c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pixel_art/placeholder_bullet.png"
-dest_files=["res://.godot/imported/placeholder_bullet.png-902452d1435a76c2337ee51930d82001.ctex"]
+source_file="res://assets/pixel_art/weapons/AK/shoot_ak.png"
+dest_files=["res://.godot/imported/shoot_ak.png-71f0e3ae05965781cc51f75a335e012c.ctex"]
 
 [params]
 

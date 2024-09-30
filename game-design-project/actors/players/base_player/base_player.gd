@@ -22,7 +22,7 @@ func _ready() -> void:
 		current_weapon.show()
 		current_weapon.set_process(true)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#var mouse_direction : Vector2 = (get_global_mouse_position() - global_position).normalized()
 	var direction : float = Input.get_axis("move_left", "move_right")
 	if direction:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw0omwy0shgdx"
-path="res://.godot/imported/wavebreaker.png-1d7d7ea79e14ac314fcaad7142ff75e1.ctex"
+uid="uid://34jx3xf0bstg"
+path="res://.godot/imported/shoot_submachine.png-eb9e71c0d7325db2603868d0fe57a987.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pixel_art/wavebreaker.png"
-dest_files=["res://.godot/imported/wavebreaker.png-1d7d7ea79e14ac314fcaad7142ff75e1.ctex"]
+source_file="res://assets/pixel_art/weapons/Submachine/shoot_submachine.png"
+dest_files=["res://.godot/imported/shoot_submachine.png-eb9e71c0d7325db2603868d0fe57a987.ctex"]
 
 [params]
 

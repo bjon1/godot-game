@@ -24,5 +24,3 @@ process_material = SubResource("ParticleProcessMaterial_b3yjs")
 lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
-
-[node name="Camera2D" type="Camera2D" parent="."]
