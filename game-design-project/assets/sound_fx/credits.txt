@@ -1,0 +1,10 @@
+Example (at least provide a link)
+Sound Effects:
+- "Explosion Sound" by John Doe (https://example.com) [Licensed under CC BY 4.0]
+- "Laser Shot" from freesound.org, created by Jane Smith [Public Domain]
+- "Background Ambience" by Sound Factory (https://soundfactory.com) [Used under commercial license]
+
+Sound Effects:
+- "Auto Pistol Shot" by gsparrysound (https://freesound.org/s/591428/) [Attribution 4.0]
+- "Gunslinger Shot" by Nox_Sound (https://freesound.org/s/541818/) [Creative Commons 0]
+- "Marksman Shot" by SuperPhat (https://freesound.org/s/514228/) [Creative Commons 0]

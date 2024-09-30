@@ -1,0 +1,2 @@
+extends Base_Gun
+class_name Auto_Pistol
