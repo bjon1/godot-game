@@ -84,15 +84,13 @@ func shoot() -> void:
 			res.burst_delay_timer.start()
 			await res.burst_delay_timer.timeout
 				
-		res.fire_rate_timer.start()
-		await res.fire_rate_timer.timeout
-		
 	if res.ammo_ammount == 0:
 		animation_player.play("no_ammo")
 		_handle_reloading_state()
 	else:
+		res.fire_rate_timer.start()
+		await res.fire_rate_timer.timeout
 		current_state = states.IDLE
-		
 
 func reload() -> void:
 	reload_progress_bar.set_value(0)

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Gun_Resource" load_steps=3 format=3 uid="uid://cf7m4ku3745me"]
 
 [ext_resource type="Script" path="res://resources/gun_resource.gd" id="1_2oehc"]
-[ext_resource type="PackedScene" uid="uid://b60r8732kqw88" path="res://weapons/bullets/base_missile/missile.tscn" id="1_lapdp"]
+[ext_resource type="PackedScene" uid="uid://c337xrxh1k1t2" path="res://weapons/bullets/auto_pistol_bullet/auto_pistol_bullet.tscn" id="1_4ywwr"]
 
 [resource]
 script = ExtResource("1_2oehc")
@@ -18,7 +18,7 @@ ammo_ammount = 18
 magazine_size = 18
 ammo_reserve = 356
 max_reserve_ammo = 0
-bullet_scene = ExtResource("1_lapdp")
+bullet_scene = ExtResource("1_4ywwr")
 damage = 13.0
 accuracy = 0.7
 bullet_count = 1

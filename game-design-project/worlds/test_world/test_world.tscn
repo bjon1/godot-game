@@ -22,3 +22,4 @@ attack_damage = 5.0
 
 [node name="rectangle_guy" parent="." instance=ExtResource("4_3qa2u")]
 position = Vector2(-272, -10)
+speed = 500.0
