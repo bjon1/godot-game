@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=4 uid="uid://cc61g16cli12g"]
+
+[ext_resource type="Texture2D" uid="uid://b8c317jcssj1" path="res://assets/pixel_art/tiles/placeholder_tile/TileSet.png" id="1_tlqar"]
+[ext_resource type="PackedScene" uid="uid://gdhygsqo8lql" path="res://actors/players/rectangle_guy/rectangle_guy.tscn" id="1_vkhu5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dlk1q"]
+texture = ExtResource("1_tlqar")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ara2c"]
+sources/0 = SubResource("TileSetAtlasSource_dlk1q")
+
+[node name="enemy_test_world" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AABEADgAAAAIAAAAAABEADcAAAAIAAAAAABEADYAAAAIAAAAAABFADYAAAAIAAAAAABFADUAAAAIAAAAAABEADUAAAAIAAAAAABGADUAAAAIAAAAAABGADYAAAAIAAAAAABHADYAAAAIAAAAAABIADYAAAAIAAAAAABIADUAAAAIAAAAAABHADUAAAAIAAAAAABGADQAAAAIAAAAAABFADQAAAAIAAAAAABEADQAAAAIAAAAAABEADMAAAAIAAAAAABFADMAAAAIAAAAAABGADMAAAAIAAAAAABHADMAAAAIAAAAAABIADMAAAAIAAAAAABIADQAAAAIAAAAAABJADQAAAAIAAAAAABHADQAAAAIAAAAAABJADMAAAAIAAAAAABJADUAAAAIAAAAAABJADYAAAAIAAAAAABJADcAAAAIAAAAAABIADcAAAAIAAAAAABHADcAAAAIAAAAAABHADgAAAAIAAAAAABGADgAAAAIAAAAAABFADgAAAAIAAAAAABFADcAAAAIAAAAAABGADcAAAAIAAAAAABIADgAAAAIAAAAAABJADgAAAAIAAAAAAA=")
+tile_set = SubResource("TileSet_ara2c")
+
+[node name="rectangle_guy" parent="." instance=ExtResource("1_vkhu5")]
+position = Vector2(1134, 835)
