@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=4 uid="uid://c0v03nt4uprj3"]
+
+[ext_resource type="PackedScene" uid="uid://gdhygsqo8lql" path="res://actors/players/rectangle_guy/rectangle_guy.tscn" id="1_cjchs"]
+[ext_resource type="Texture2D" uid="uid://b8c317jcssj1" path="res://assets/pixel_art/tiles/placeholder_tile/TileSet.png" id="2_2ojwt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a011q"]
+texture = ExtResource("2_2ojwt")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qkjby"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_a011q")
+
+[node name="test_world_2" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAKAAkAAQACAAAAAAALAAkAAQACAAAAAAAMAAkAAQACAAAAAAANAAkAAQACAAAAAAANAAgAAQACAAAAAAAMAAgAAQACAAAAAAALAAgAAQACAAAAAAAKAAgAAQACAAAAAAAKAAcAAQACAAAAAAALAAcAAQACAAAAAAAMAAcAAQACAAAAAAANAAcAAQACAAAAAAA=")
+tile_set = SubResource("TileSet_qkjby")
+
+[node name="rectangle_guy" parent="." instance=ExtResource("1_cjchs")]
+position = Vector2(390, 272)

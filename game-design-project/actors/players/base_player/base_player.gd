@@ -12,9 +12,15 @@ enum{UP, DOWN}
 @onready var weapons : Node2D = get_node("player_weapons")
 var current_weapon : Node2D
 
+
 func _ready() -> void:
-	#current_weapon = weapons.get_child(0)
-	pass
+	if weapons.get_child(0):
+		for child in weapons.get_children():
+			child.hide()
+			child.set_process(false)
+		current_weapon = weapons.get_child(0)
+		current_weapon.show()
+		current_weapon.set_process(true)
 
 func _process(_delta: float) -> void:
 	#var mouse_direction : Vector2 = (get_global_mouse_position() - global_position).normalized()
@@ -29,6 +35,12 @@ func _process(_delta: float) -> void:
 		velocity.y = direction * speed
 	else:
 		velocity.y = move_toward(velocity.x, 0, speed)
+		
+	#weapon select
+	if Input.is_action_just_pressed("scroll_up"):
+		_switch_weapon(UP)
+	if Input.is_action_just_pressed("scroll_down"):
+		_switch_weapon(DOWN)
 	
 	move_and_slide()
 	
@@ -44,5 +56,7 @@ func _switch_weapon(direction : int) -> void:
 			index = 0
 			
 	current_weapon.hide()
+	current_weapon.set_process(false)
 	current_weapon = weapons.get_child(index)
+	current_weapon.set_process(true)
 	current_weapon.show()

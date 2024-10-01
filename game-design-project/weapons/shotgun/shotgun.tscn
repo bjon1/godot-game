@@ -1,9 +1,9 @@
-[gd_scene load_steps=42 format=3 uid="uid://kl4f4guaxrfj"]
+[gd_scene load_steps=42 format=3 uid="uid://cfqu0pp7sgvrl"]
 
 [ext_resource type="PackedScene" uid="uid://c42ch6c6givx4" path="res://weapons/base_gun/base_gun.tscn" id="1_k3hc7"]
 [ext_resource type="Script" path="res://weapons/shotgun/shotgun.gd" id="2_rla1q"]
 [ext_resource type="Texture2D" uid="uid://ctq4xltueg3e5" path="res://assets/pixel_art/weapons/Shotgun/shoot_shotgun.png" id="3_ler3j"]
-[ext_resource type="Resource" uid="uid://baduojajty2hw" path="res://weapons/shotgun/shotgun.tres" id="3_phmbo"]
+[ext_resource type="Resource" path="res://weapons/shotgun/shotgun.tres" id="3_phmbo"]
 [ext_resource type="Texture2D" uid="uid://bgai2k77p0hrf" path="res://assets/pixel_art/weapons/Shotgun/reload_shotgun.png" id="4_kl86l"]
 
 [sub_resource type="Animation" id="Animation_qfeiv"]
