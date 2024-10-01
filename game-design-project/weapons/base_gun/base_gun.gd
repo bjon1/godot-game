@@ -30,7 +30,6 @@ var current_state : states = states.IDLE
 @onready var shoot_animation_length : float = animation_player.get_animation("shoot").length
 
 #states
-
 func _ready() -> void:
 	add_child(res.fire_rate_timer)
 	add_child(res.burst_delay_timer)

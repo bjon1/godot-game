@@ -13,3 +13,7 @@
 * Added a pistol and shotgun weapon
 * weapons can be selected with the mouse scroll wheel
 * Fixed bullets colliding with player 
+
+### 2024-10-01 - 4hrs worked on base sword class
+* Added swing animation and hitbox
+* Added functions for upgrading speed and size

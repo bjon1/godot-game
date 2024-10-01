@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=4 uid="uid://c0v03nt4uprj3"]
 
 [ext_resource type="PackedScene" uid="uid://gdhygsqo8lql" path="res://actors/players/rectangle_guy/rectangle_guy.tscn" id="1_cjchs"]
-[ext_resource type="Texture2D" path="res://assets/pixel_art/TileSet.png" id="2_2ojwt"]
+[ext_resource type="Texture2D" uid="uid://b8c317jcssj1" path="res://assets/pixel_art/tiles/placeholder_tile/TileSet.png" id="2_2ojwt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a011q"]
 texture = ExtResource("2_2ojwt")
