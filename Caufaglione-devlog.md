@@ -2,7 +2,7 @@
 * Name: Joshua Caufaglione
 * [Trello Board](https://trello.com/b/t5pNhfbN/new-paltz-game-design-final-project-template)
 * [Proposal](Caufaglione-proposal.pdf)
-* [itch.io](sessiom.itch.io)
+* [itch.io](https://itch.io/profile/sessiom)
 
 ### 2024-10-01 - 4hrs worked on base sword class
 * Added swing animation and hitbox
