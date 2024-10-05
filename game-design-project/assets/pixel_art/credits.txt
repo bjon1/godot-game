@@ -1,9 +1,0 @@
-Example (at least provide links)
-Pixel Art:
-- "Character Sprite" by John Doe (https://example.com) [Licensed under CC BY 4.0]
-- "Background Tileset" by PixelArtMaster from OpenGameArt.org [Public Domain]
-- "UI Icons" by Artist123 [Used under commercial license]
-
-Pixel Art:
-
-- "Firearms Spritesheets" by Arcade Island (https://arcadeisland.itch.io/guns-asset-pack-v1)

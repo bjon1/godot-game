@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfrfdwsnen8sp"]
-
-[ext_resource type="Script" path="res://worlds/base_tile_map_layer/base_tile_map_layer.gd" id="1_i7xu0"]
-
-[node name="base_tile_map_layer" type="TileMapLayer"]
-script = ExtResource("1_i7xu0")

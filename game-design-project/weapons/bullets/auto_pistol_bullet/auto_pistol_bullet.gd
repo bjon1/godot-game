@@ -1,2 +1,0 @@
-extends Base_Bullet
-class_name Auto_Pistol_Bullet
