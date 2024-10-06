@@ -4,6 +4,17 @@
 * [Proposal](Caufaglione-proposal.pdf)
 * [itch.io](https://itch.io/profile/sessiom)
 
+### 2024-10-06 - 1hr worked on level up system
+* Added a basic level up system with 100xp for level one and plus 10xp for each new level
+* A UI controller attached to the character updates every frame
+  
+### 2024-10-04 – 3hr working on xp drop and pickup 
+* Watched video (https://youtu.be/-ep3ARuCdk0?si=gLV5ln3cJLgYsC7U)
+* Created an xp consumable that drops randomly when an enemy is eliminated. 
+
+### 2024-10-03 – 1hr worked on progress bars 
+* Watched two videos to create Hp and Xp progress bars (https://www.youtube.com/watch?v=5poF352bDsQ) and (https://www.youtube.com/watch?v=1gHMG_WuDZY)
+  
 ### 2024-10-01 - 4hrs worked on base sword class
 * Added swing animation and hitbox
 * Added functions for upgrading speed and size
