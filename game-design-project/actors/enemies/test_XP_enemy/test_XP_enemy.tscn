@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://cuth0o7rgaqd5"]
+
+[ext_resource type="PackedScene" uid="uid://febbnmv28yvg" path="res://actors/enemies/base_enemy/base_enemy.tscn" id="1_v3d1w"]
+[ext_resource type="Script" path="res://actors/enemies/test_XP_enemy/test_xp_enemy.gd" id="2_0k00g"]
+[ext_resource type="Texture2D" uid="uid://cepdl3rm1bko6" path="res://assets/pixel_art/enemies/test_dummy/dummy_sprite_sheet.png" id="3_3uh62"]
+[ext_resource type="Script" path="res://actors/enemies/test_XP_enemy/progress_bar.gd" id="4_gr2op"]
+[ext_resource type="PackedScene" uid="uid://buvvpv115mjcw" path="res://components/xp_spawner/xp_spawner.tscn" id="5_e44i6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kshyb"]
+atlas = ExtResource("3_3uh62")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohm02"]
+atlas = ExtResource("3_3uh62")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsxit"]
+atlas = ExtResource("3_3uh62")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8tck"]
+atlas = ExtResource("3_3uh62")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq84w"]
+atlas = ExtResource("3_3uh62")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blvpy"]
+atlas = ExtResource("3_3uh62")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sx0we"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kshyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohm02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsxit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8tck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq84w")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blvpy")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="test_XP_enemy" instance=ExtResource("1_v3d1w")]
+script = ExtResource("2_0k00g")
+base_enemy_debug = false
+base_character_debug = false
+max_health = 100.0
+health = 100.0
+speed = 100.0
+attack_damage = 3.0
+
+[node name="AnimatedSprite2D" parent="." index="4"]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_sx0we")
+animation = &"Idle"
+frame_progress = 0.332739
+
+[node name="ProgressBar" type="ProgressBar" parent="." index="5"]
+offset_left = -63.0
+offset_top = 67.0
+offset_right = 64.0
+offset_bottom = 94.0
+script = ExtResource("4_gr2op")
+
+[node name="XP_spawner" parent="." index="6" instance=ExtResource("5_e44i6")]

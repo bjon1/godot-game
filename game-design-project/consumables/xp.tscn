@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://csei0dlck8fq8"]
+
+[ext_resource type="Script" path="res://consumables/xp.gd" id="1_e6bf3"]
+[ext_resource type="AudioStream" uid="uid://dlf4l2knac5ia" path="res://assets/sound_fx/xp_sfx/pickupXP.wav" id="2_apw0w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bw3av"]
+
+[node name="XP" type="Area2D"]
+z_index = -1
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_e6bf3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bw3av")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0.247059, 0.611765, 0.870588, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_apw0w")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

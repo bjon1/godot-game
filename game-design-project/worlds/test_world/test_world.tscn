@@ -13,11 +13,6 @@ tile_set = ExtResource("3_vkg6p")
 
 [node name="test_dummy" parent="." instance=ExtResource("1_ymjlo")]
 position = Vector2(117, 0)
-base_enemy_debug = false
-base_character_debug = false
-max_health = 100.0
-health = 100.0
-speed = 100.0
 attack_damage = 5.0
 
 [node name="rectangle_guy" parent="." instance=ExtResource("4_3qa2u")]

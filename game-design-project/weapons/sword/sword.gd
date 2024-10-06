@@ -4,8 +4,8 @@ extends Node2D
 @onready var collision_shape : CollisionShape2D = %CollisionShape2D
 
 
-@export_range(1.0, 5.0) var swing_rate : float = 1.0
-@export_range(1.0, 2.5) var sword_size : float = 1.0
+@export_range(1.0, 5.0) var swing_rate : float 
+@export_range(1.0, 2.5) var sword_size : float 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -71,6 +71,8 @@ _data = {
 
 [node name="sword" type="Node2D"]
 script = ExtResource("1_olllg")
+swing_rate = 5.0
+sword_size = 2.5
 
 [node name="pivot" type="StaticBody2D" parent="."]
 rotation = 1.5708
