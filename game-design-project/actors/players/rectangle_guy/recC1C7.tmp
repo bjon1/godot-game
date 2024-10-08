@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://gdhygsqo8lql"]
+
+[ext_resource type="Script" path="res://actors/players/rectangle_guy/rectangle_guy.gd" id="2_0k4na"]
+[ext_resource type="Script" path="res://actors/players/rectangle_guy/player_weapons.gd" id="2_l7p5m"]
+[ext_resource type="Texture2D" uid="uid://21k5m4xdh2cx" path="res://actors/players/rectangle_guy/sprites/rectangle_player.png" id="2_v1u8r"]
+[ext_resource type="Texture2D" uid="uid://bju5ed0dbvs0t" path="res://actors/players/rectangle_guy/sprites/rectangle_arm.png" id="3_1itks"]
+[ext_resource type="PackedScene" uid="uid://cfqu0pp7sgvrl" path="res://weapons/shotgun/shotgun.tscn" id="3_6wni6"]
+[ext_resource type="PackedScene" uid="uid://btfuaag7avnui" path="res://weapons/auto_pistol/auto_pistol.tscn" id="4_ufuep"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nksfl"]
+size = Vector2(24, 54)
+
+[node name="rectangle_guy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_0k4na")
+base_character_debug = null
+max_health = 10.0
+health = null
+speed = null
+attack_damage = null
+
+[node name="player_weapons" type="Node2D" parent="."]
+z_index = 1
+script = ExtResource("2_l7p5m")
+
+[node name="shotgun" parent="player_weapons" instance=ExtResource("3_6wni6")]
+visible = false
+
+[node name="auto_pistol" parent="player_weapons" instance=ExtResource("4_ufuep")]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_nksfl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="body" type="Sprite2D" parent="."]
+texture = ExtResource("2_v1u8r")
+
+[node name="arm_right" type="Sprite2D" parent="body"]
+position = Vector2(24, 14)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_1itks")
+
+[node name="arm_left" type="Sprite2D" parent="body"]
+position = Vector2(-24, 14)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_1itks")

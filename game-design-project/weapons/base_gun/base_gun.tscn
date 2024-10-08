@@ -51,12 +51,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="base_gun" type="Node2D" node_paths=PackedStringArray("main_scene")]
+[node name="base_gun" type="Node2D"]
 script = ExtResource("1_eq05o")
-main_scene = NodePath(".")
 res = ExtResource("2_5yahl")
 
-[node name="sfx" type="Node" parent="."]
+[node name="sfx" type="Node2D" parent="."]
 
 [node name="gun_shot" type="AudioStreamPlayer2D" parent="sfx"]
 max_polyphony = 10
