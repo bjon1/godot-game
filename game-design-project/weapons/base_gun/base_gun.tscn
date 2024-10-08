@@ -55,7 +55,7 @@ animations = [{
 script = ExtResource("1_eq05o")
 res = ExtResource("2_5yahl")
 
-[node name="sfx" type="Node" parent="."]
+[node name="sfx" type="Node2D" parent="."]
 
 [node name="gun_shot" type="AudioStreamPlayer2D" parent="sfx"]
 max_polyphony = 10

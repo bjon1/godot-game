@@ -28,64 +28,64 @@ tile_set = SubResource("TileSet_qkjby")
 position = Vector2(390, 272)
 
 [node name="XP" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(365, 347)
+position = Vector2(55, 462)
 
 [node name="XP2" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(293, 339)
+position = Vector2(531, 144)
 
 [node name="XP3" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(308, 389)
+position = Vector2(343, 490)
 
 [node name="XP4" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(207, 392)
+position = Vector2(-14, 202)
 
 [node name="XP5" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(216, 329)
+position = Vector2(170, 129)
 
 [node name="XP6" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(275, 367)
+position = Vector2(663, 542)
 
 [node name="XP7" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(260, 295)
+position = Vector2(269, 259)
 
 [node name="XP8" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(199, 270)
+position = Vector2(845, 94)
 
 [node name="XP9" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(237, 240)
+position = Vector2(43, 260)
 
 [node name="XP10" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(208, 182)
+position = Vector2(704, -31)
 
 [node name="test_XP_enemy" parent="." instance=ExtResource("3_1diek")]
 position = Vector2(554, 275)
 
 [node name="XP11" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(331, 129)
+position = Vector2(307, 89)
 
 [node name="XP12" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(489, 128)
+position = Vector2(968, 310)
 
 [node name="XP13" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(288, 187)
+position = Vector2(684, 129)
 
 [node name="XP14" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(387, 135)
+position = Vector2(560, 435)
 
 [node name="XP15" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(277, 153)
+position = Vector2(426, 41)
 
 [node name="XP16" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(329, 153)
+position = Vector2(128, 72)
 
 [node name="XP17" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(214, 133)
+position = Vector2(253, 311)
 
 [node name="XP18" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(464, 141)
+position = Vector2(839, 300)
 
 [node name="XP19" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(429, 101)
+position = Vector2(374, 421)
 
 [node name="XP20" parent="." instance=ExtResource("4_07fhq")]
-position = Vector2(406, 173)
+position = Vector2(693, 289)

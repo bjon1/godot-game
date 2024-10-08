@@ -24,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("pivot/CollisionShape2D:disabled")
+tracks/1/path = NodePath("pivot/Area2D/hurtbox:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -53,7 +53,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("pivot/CollisionShape2D:disabled")
+tracks/1/path = NodePath("pivot/Area2D/hurtbox:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -74,10 +74,15 @@ script = ExtResource("1_olllg")
 swing_rate = 5.0
 sword_size = 2.5
 
-[node name="pivot" type="StaticBody2D" parent="."]
+[node name="pivot" type="Marker2D" parent="."]
 rotation = 1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pivot"]
+[node name="Area2D" type="Area2D" parent="pivot"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 0
+
+[node name="hurtbox" type="CollisionShape2D" parent="pivot/Area2D"]
 unique_name_in_owner = true
 position = Vector2(0, -13.5)
 shape = SubResource("RectangleShape2D_2w8m6")
@@ -89,9 +94,6 @@ position = Vector2(0, -10)
 rotation = -0.785398
 texture = ExtResource("2_2nxgy")
 
-[node name="DebugCamera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
@@ -99,9 +101,12 @@ libraries = {
 }
 
 [node name="DebugLabel" type="Label" parent="."]
+visible = false
 offset_left = -46.0
 offset_top = 14.0
 offset_right = 2.0
 offset_bottom = 37.0
 text = "Value:"
 script = ExtResource("3_0nowt")
+
+[connection signal="body_entered" from="pivot/Area2D" to="." method="_on_hurt_box_body_entered"]

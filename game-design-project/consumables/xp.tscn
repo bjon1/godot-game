@@ -1,28 +1,67 @@
-[gd_scene load_steps=4 format=3 uid="uid://csei0dlck8fq8"]
+[gd_scene load_steps=9 format=3 uid="uid://csei0dlck8fq8"]
 
 [ext_resource type="Script" path="res://consumables/xp.gd" id="1_e6bf3"]
 [ext_resource type="AudioStream" uid="uid://dlf4l2knac5ia" path="res://assets/sound_fx/xp_sfx/pickupXP.wav" id="2_apw0w"]
+[ext_resource type="Shader" path="res://shaders/xp.gdshader" id="2_phe4i"]
+[ext_resource type="Texture2D" uid="uid://mxdv3tx8noem" path="res://assets/pixel_art/icon.svg" id="4_gofd3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bw3av"]
+[sub_resource type="Shader" id="Shader_xkqmh"]
+code = "shader_type canvas_item;
+
+uniform float glow_intensity : hint_range(0.0, 1.0) = 0.6;
+uniform float shimmer_speed : hint_range(0.0, 5.0) = 1.5;
+
+void fragment() {
+    // UV coordinates and base color
+    vec2 uv = FRAGCOORD.xy / SCREEN_PIXEL_SIZE;
+    vec4 base_color = texture(TEXTURE, UV);
+
+    // Compute a glowing effect with shimmer animation
+    float distance = length(UV - vec2(0.5));
+    float glow = glow_intensity / (distance * distance + 0.1);
+    float shimmer = abs(sin(TIME * shimmer_speed + distance * 15.0)) * glow_intensity;
+
+    // Apply glow and shimmer to the base color
+    base_color.rgb += vec3(glow + shimmer);
+
+    COLOR = base_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5di5i"]
+shader = SubResource("Shader_xkqmh")
+shader_parameter/glow_intensity = 0.6
+shader_parameter/shimmer_speed = 1.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pbmce"]
+radius = 48.64
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cidxa"]
+shader = ExtResource("2_phe4i")
+shader_parameter/glow_intensity = 0.047
+shader_parameter/shimmer_speed = 5.0
+shader_parameter/radius = 0.318
+shader_parameter/border_thickness = 0.127
+shader_parameter/blue_color = Color(0, 0.5, 1, 1)
 
 [node name="XP" type="Area2D"]
 z_index = -1
+material = SubResource("ShaderMaterial_5di5i")
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_e6bf3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_bw3av")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
-color = Color(0.247059, 0.611765, 0.870588, 1)
+visible = false
+shape = SubResource("CircleShape2D_pbmce")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_apw0w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_cidxa")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_gofd3")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
