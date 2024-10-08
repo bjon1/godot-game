@@ -89,3 +89,39 @@ position = Vector2(374, 421)
 
 [node name="XP20" parent="." instance=ExtResource("4_07fhq")]
 position = Vector2(693, 289)
+
+[node name="test_XP_enemy2" parent="." instance=ExtResource("3_1diek")]
+position = Vector2(785, 474)
+
+[node name="test_XP_enemy3" parent="." instance=ExtResource("3_1diek")]
+position = Vector2(-97, 486)
+
+[node name="test_XP_enemy4" parent="." instance=ExtResource("3_1diek")]
+position = Vector2(-121, -61)
+
+[node name="test_XP_enemy5" parent="." instance=ExtResource("3_1diek")]
+position = Vector2(973, -119)
+
+[node name="test_XP_enemy6" parent="." instance=ExtResource("3_1diek")]
+position = Vector2(325, 788)
+
+[node name="test_XP_enemy7" parent="." instance=ExtResource("3_1diek")]
+position = Vector2(384, -214)
+
+[node name="test_XP_enemy8" parent="." instance=ExtResource("3_1diek")]
+position = Vector2(-377, 278)
+
+[node name="test_XP_enemy9" parent="." instance=ExtResource("3_1diek")]
+position = Vector2(1169, 317)
+
+[node name="test_XP_enemy10" parent="." instance=ExtResource("3_1diek")]
+position = Vector2(1116, 771)
+
+[node name="test_XP_enemy11" parent="." instance=ExtResource("3_1diek")]
+position = Vector2(-406, -153)
+
+[node name="test_XP_enemy12" parent="." instance=ExtResource("3_1diek")]
+position = Vector2(-276, 754)
+
+[node name="test_XP_enemy13" parent="." instance=ExtResource("3_1diek")]
+position = Vector2(678, -171)

@@ -13,7 +13,7 @@ Note:
 @export var speed : float = 100.0
 @export var attack_damage : float = 3.0
 
-#@onready var animation_player : AnimationPlayer = $AnimationPlayer
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
 
 var the_world
 
@@ -37,11 +37,11 @@ func clamp_to_map() -> void:
 	
 func take_damage(damage_amount : float) -> void:
 	if health > 0:
-		#animation_player.play("hurt")
+		animation_player.play("hurt")
 		health -= damage_amount
 		if base_character_debug: print("take_damage(): health ", self.name + ": ", health)
 		destroy() #check to destroy character
-		#animation_player.queue("idle")
+		animation_player.queue("idle")
 		
 func destroy() -> void: #using this function on the player can cause the game to crash
 	if health <= 0:

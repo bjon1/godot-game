@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name Base_Sword
 
 enum Target_Layers{
 	Player,
@@ -23,9 +23,6 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("left_click"):
 		swing()
-	if Input.is_action_just_pressed("reload"):
-		upgrade_speed(.25)
-		upgrade_size(.25)
 
 
 func swing():
