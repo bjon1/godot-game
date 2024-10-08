@@ -3,6 +3,13 @@
 * [Trello Board](https://trello.com/b/t5pNhfbN/new-paltz-game-design-final-project-template)
 * [Proposal](Caufaglione-proposal.pdf)
 * [itch.io](https://itch.io/profile/sessiom)
+  
+### 2024-10-08 – 2hr worked on basic upgrade interface 
+* When a new level is reached three buttons pop up to give the player a choice of possible upgrades (increase sword size, damage, or pickup radius) 
+
+### 2024-10-07 – 1hr work on xp shader and added damage to sword 
+* Asked chatgpt to make a shiny glowing shader that is like minecraft xp, Then tinkered around with the parameters till it looked right. 
+* Also, looked into base bullet class and base enemy class to figure out how to make the sword deal damage 
 
 ### 2024-10-06 - 1hr worked on level up system
 * Added a basic level up system with 100xp for level one and plus 10xp for each new level
