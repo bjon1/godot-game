@@ -1,32 +1,27 @@
-# Fall 2024 - Intro to Game Design @ SUNY New Paltz
-* Name: Joshua Caufaglione
-* [Trello Board](https://trello.com/b/t5pNhfbN/new-paltz-game-design-final-project-template)
-* [Proposal](Caufaglione-proposal.pdf)
-* [itch.io](https://itch.io/profile/sessiom)
-  
-### 2024-10-08 – 2hr worked on basic upgrade interface 
+
+### 2024-10-08 - 2hrs: worked on basic upgrade interface 
 * When a new level is reached three buttons pop up to give the player a choice of possible upgrades (increase sword size, damage, or pickup radius) 
 
-### 2024-10-07 – 1hr work on xp shader and added damage to sword 
+### 2024-10-07 - 1hr: work on xp shader and added damage to sword 
 * Asked chatgpt to make a shiny glowing shader that is like minecraft xp, Then tinkered around with the parameters till it looked right. 
 * Also, looked into base bullet class and base enemy class to figure out how to make the sword deal damage 
 
-### 2024-10-06 - 1hr worked on level up system
+### 2024-10-06 - 1hr: worked on level up system
 * Added a basic level up system with 100xp for level one and plus 10xp for each new level
 * A UI controller attached to the character updates every frame
   
-### 2024-10-04 – 3hr working on xp drop and pickup 
+### 2024-10-04 - 3hrs: working on xp drop and pickup 
 * Watched video (https://youtu.be/-ep3ARuCdk0?si=gLV5ln3cJLgYsC7U)
 * Created an xp consumable that drops randomly when an enemy is eliminated. 
 
-### 2024-10-03 – 1hr worked on progress bars 
+### 2024-10-03 - 1hr: worked on progress bars 
 * Watched two videos to create Hp and Xp progress bars (https://www.youtube.com/watch?v=5poF352bDsQ) and (https://www.youtube.com/watch?v=1gHMG_WuDZY)
   
-### 2024-10-01 - 4hrs worked on base sword class
+### 2024-10-01 - 4hrs: worked on base sword class
 * Added swing animation and hitbox
 * Added functions for upgrading speed and size
 
-### 2024-09-29 - 2hrs worked on weapons and weapon switching
+### 2024-09-29 - 2hrs: worked on weapons and weapon switching
 * Added a pistol and shotgun weapon
 * weapons can be selected with the mouse scroll wheel
 * Fixed bullets colliding with player 
