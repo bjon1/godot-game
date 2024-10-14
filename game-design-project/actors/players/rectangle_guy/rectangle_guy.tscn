@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bju5ed0dbvs0t" path="res://actors/players/rectangle_guy/sprites/rectangle_arm.png" id="3_1itks"]
 [ext_resource type="PackedScene" uid="uid://dbk16fgii6y7o" path="res://weapons/sword/sword.tscn" id="4_softw"]
 [ext_resource type="Script" path="res://actors/players/rectangle_guy/ui_controller.gd" id="7_j1wrb"]
-[ext_resource type="PackedScene" uid="uid://uc6oinf6kvdw" path="res://components/upgrades/upgrade_menu.tscn" id="7_yk6h6"]
+[ext_resource type="PackedScene" uid="uid://uc6oinf6kvdw" path="res://components/upgrades/upgrade_menu/upgrade_menu.tscn" id="7_yk6h6"]
 [ext_resource type="Script" path="res://actors/players/rectangle_guy/pickup_area.gd" id="8_32tmr"]
-[ext_resource type="PackedScene" uid="uid://bx52h0ayh3udp" path="res://components/upgrades/new_weapon_menu.tscn" id="8_oyumc"]
+[ext_resource type="PackedScene" uid="uid://bx52h0ayh3udp" path="res://components/upgrades/new_weapon_menu/new_weapon_menu.tscn" id="8_oyumc"]
 [ext_resource type="AudioStream" uid="uid://dlf4l2knac5ia" path="res://assets/sound_fx/xp_sfx/pickupXP.wav" id="9_caat5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nksfl"]

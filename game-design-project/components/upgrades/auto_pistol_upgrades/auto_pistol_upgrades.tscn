@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx04rjipe0bbb"]
+
+[ext_resource type="Script" path="res://components/upgrades/auto_pistol_upgrades/auto_pistol_upgrades.gd" id="1_nppv5"]
+
+[node name="auto_pistol_upgrades" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nppv5")
+
+[node name="damage" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 200.0
+text = "|Auto Pistol|
+Increase Damage"
+
+[node name="reload_speed" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 200.0
+text = "|Auto Pistol|
+Increase Reload
+Speed"
+
+[node name="ammo_reserve" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 200.0
+text = "|Auto Pistol|
+Increase Total
+Ammo Reserve"
+
+[node name="fire_rate" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 200.0
+text = "|Auto Pistol|
+Increase Fire Rate"
+
+[node name="accuracy" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 200.0
+text = "|Auto Pistol|
+Increase accuracy"
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="button_down" from="damage" to="." method="_on_damage_button_down"]
+[connection signal="button_down" from="reload_speed" to="." method="_on_reload_speed_button_down"]
+[connection signal="button_down" from="ammo_reserve" to="." method="_on_ammo_button_down"]
+[connection signal="button_down" from="fire_rate" to="." method="_on_fire_rate_button_down"]
+[connection signal="button_down" from="accuracy" to="." method="_on_accuracy_button_down"]
