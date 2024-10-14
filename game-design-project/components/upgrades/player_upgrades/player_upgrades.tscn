@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkky62xui7f6b"]
+
+[ext_resource type="Script" path="res://components/upgrades/player_upgrades/player_upgrades.gd" id="1_uyplx"]
+
+[node name="player_upgrades" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uyplx")
+
+[node name="PickupRadius" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 200.0
+text = "Increase Pickup
+Radius"
+text_overrun_behavior = 3
+
+[node name="Health" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 200.0
+text = "Increase Player
+Health"
+text_overrun_behavior = 3
+
+[node name="Speed" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 200.0
+text = "Increase Player
+Movement
+Speed"
+text_overrun_behavior = 3
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="button_down" from="PickupRadius" to="." method="_on_pickup_radius_button_down"]
+[connection signal="button_down" from="Health" to="." method="_on_health_button_down"]
+[connection signal="button_down" from="Speed" to="." method="_on_speed_button_down"]

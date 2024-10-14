@@ -1,2 +1,0 @@
-extends Resource
-class_name Sword_Resource
