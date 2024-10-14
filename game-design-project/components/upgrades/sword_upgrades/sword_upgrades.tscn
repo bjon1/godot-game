@@ -16,8 +16,8 @@ visible = false
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 200.0
-text = "Increase Sword 
-Size"
+text = "|Sword |
+Increase Size"
 text_overrun_behavior = 3
 
 [node name="Speed" type="Button" parent="."]
@@ -25,8 +25,8 @@ visible = false
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 200.0
-text = "Increase Sword 
-Speed
+text = "|Sword |
+Increase  Speed
 "
 text_overrun_behavior = 3
 
@@ -35,8 +35,8 @@ visible = false
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 200.0
-text = "Increase Sword 
-Damage
+text = "|Sword |
+Increase Damage
 "
 text_overrun_behavior = 3
 

@@ -16,7 +16,8 @@ visible = false
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 200.0
-text = "Increase Pickup
+text = "|Player|
+Increase Pickup
 Radius"
 text_overrun_behavior = 3
 
@@ -25,8 +26,8 @@ visible = false
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 200.0
-text = "Increase Player
-Health"
+text = "|Player|
+Increase Health"
 text_overrun_behavior = 3
 
 [node name="Speed" type="Button" parent="."]
@@ -34,9 +35,9 @@ visible = false
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 200.0
-text = "Increase Player
-Movement
-Speed"
+text = "|Player|
+Increase 
+Movement Speed"
 text_overrun_behavior = 3
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

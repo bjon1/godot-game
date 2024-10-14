@@ -4,9 +4,9 @@ extends Control
 @onready var sword_upgrades : PackedScene = preload("res://components/upgrades/sword_upgrades/sword_upgrades.tscn")
 @onready var player_upgrades : PackedScene = preload("res://components/upgrades/player_upgrades/player_upgrades.tscn")
 @onready var upgrade_array : Array[PackedScene] = [sword_upgrades, player_upgrades]
+@onready var player : Rectangle_Guy = get_tree().root.get_node("test_world_2/rectangle_guy")
 
 func enable():
-	print(upgrade_array)
 	for i in range(3):
 		var random_index : int = randi() % upgrade_array.size()
 		var new_upgrade : PackedScene = upgrade_array[random_index]

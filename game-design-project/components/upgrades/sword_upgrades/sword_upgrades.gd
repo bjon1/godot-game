@@ -32,4 +32,3 @@ func _on_damage_button_down():
 
 func _on_tree_exiting():
 	shared_array = reset_array
-	print(" Sword upgrades RESET!")

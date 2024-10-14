@@ -9,6 +9,7 @@ var xp_level : int = 0
 @onready var pickup_area= $PickupArea/CollisionShape2D
 @onready var player_weapons = $player_weapons
 @onready var upgrade_menu = $CanvasLayer/UpgradeMenu
+@onready var new_weapon_menu = $CanvasLayer/NewWeaponMenu
 
 func collect_xp(value: int) -> void:
 	xp_sound.pitch_scale = randf_range(0.8, 1.2)
@@ -18,7 +19,10 @@ func collect_xp(value: int) -> void:
 		xp = 0
 		xp_level += 1
 		level_up_value += 10
-		upgrade_menu.enable()
+		if xp_level == 5:
+			new_weapon_menu.enable()
+		else:
+			upgrade_menu.enable()
 		
 func upgrade_pickup_area(value: float) -> void:
 	pickup_area.shape.radius += (1 + value)

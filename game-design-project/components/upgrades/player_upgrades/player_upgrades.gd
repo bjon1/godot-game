@@ -32,4 +32,4 @@ func _on_speed_button_down():
 	disable()
 	
 func _on_tree_exiting():
-	print(" Player upgrades RESET!")
+	shared_array = reset_array

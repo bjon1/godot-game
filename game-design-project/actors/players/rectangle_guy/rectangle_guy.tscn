@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://gdhygsqo8lql"]
+[gd_scene load_steps=21 format=3 uid="uid://gdhygsqo8lql"]
 
 [ext_resource type="Script" path="res://actors/players/rectangle_guy/rectangle_guy.gd" id="2_0k4na"]
 [ext_resource type="Script" path="res://actors/players/rectangle_guy/player_weapons.gd" id="2_l7p5m"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://actors/players/rectangle_guy/ui_controller.gd" id="7_j1wrb"]
 [ext_resource type="PackedScene" uid="uid://uc6oinf6kvdw" path="res://components/upgrades/upgrade_menu.tscn" id="7_yk6h6"]
 [ext_resource type="Script" path="res://actors/players/rectangle_guy/pickup_area.gd" id="8_32tmr"]
+[ext_resource type="PackedScene" uid="uid://bx52h0ayh3udp" path="res://components/upgrades/new_weapon_menu.tscn" id="8_oyumc"]
 [ext_resource type="AudioStream" uid="uid://dlf4l2knac5ia" path="res://assets/sound_fx/xp_sfx/pickupXP.wav" id="9_caat5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nksfl"]
@@ -30,7 +31,7 @@ font_names = PackedStringArray("Calibri")
 subpixel_positioning = 0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gyybe"]
-radius = 58.0086
+radius = 53.0094
 
 [sub_resource type="Animation" id="Animation_1ie2o"]
 resource_name = "hurt"
@@ -81,9 +82,11 @@ texture = ExtResource("3_1itks")
 
 [node name="UIController" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("7_j1wrb")
 
 [node name="HealthBar" type="ProgressBar" parent="CanvasLayer/UIController"]
@@ -129,6 +132,9 @@ offset_bottom = 613.0
 text = "100"
 
 [node name="UpgradeMenu" parent="CanvasLayer" instance=ExtResource("7_yk6h6")]
+
+[node name="NewWeaponMenu" parent="CanvasLayer" instance=ExtResource("8_oyumc")]
+visible = false
 
 [node name="PickupArea" type="Area2D" parent="."]
 collision_layer = 2
