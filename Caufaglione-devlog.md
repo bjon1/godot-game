@@ -1,3 +1,7 @@
+### 2024-10-14 - 6hr Upgrade menu changes and bug fixes
+* Reworked upgrade menu to grab three random upgrades choosing from (Player upgrades, Sword upgrades, or Pistol upgrades)
+* Fixed bug with XP, XP would start vibrating if the player moved faster then the XP
+* Added a new weapon menu when level 5 is reached
 
 ### 2024-10-08 - 2hrs: worked on basic upgrade interface 
 * When a new level is reached three buttons pop up to give the player a choice of possible upgrades (increase sword size, damage, or pickup radius) 
