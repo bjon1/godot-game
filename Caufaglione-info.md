@@ -2,4 +2,4 @@
 * Name: Joshua Caufaglione
 * [Trello Board](https://trello.com/b/t5pNhfbN/new-paltz-game-design-final-project-template)
 * [Proposal](Caufaglione-proposal.pdf)
-* [itch.io](https://itch.io/profile/sessiom)
+* [itch.io](https://sessiom.itch.io/mechanic-demo)
