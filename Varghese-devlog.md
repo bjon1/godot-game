@@ -7,7 +7,7 @@
 * [Itch.io](https://jeiss3341.itch.io)
 * [Itch.io2](https://jeiss3341.itch.io/pratice-project)
 
-## 2024-10-13 - 8hrs: Fixing Errors
+## 2024-10-15 - 8hrs: Fixing Errors
 * Fixed Y-sort, layers and mask for background, player and enemies
 * Fixed basic attack one shotting enemy
 * Updated new enemies
