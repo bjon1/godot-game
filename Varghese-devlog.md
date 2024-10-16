@@ -7,6 +7,19 @@
 * [Itch.io](https://jeiss3341.itch.io)
 * [Itch.io2](https://jeiss3341.itch.io/pratice-project)
 
+## 2024-10-13 - 8hrs: Fixing Errors
+* Fixed Y-sort, layers and mask for background, player and enemies
+* Fixed basic attack one shotting enemy
+* Updated new enemies
+* Need to push it to Github ASAP, push itch.io update everything for this class by tomorrow
+* Problems: Player leaves screen, Enemies run into each other, Need to show enemy attacks, Develop more complex AI
+* (Ideally can finish by this weekend)
+
+## 2024-10-13 - 3hrs: Y-sorting/masking/collision
+* Had an error with my collision with player and enemy that crashed the game, unable to fix it
+* Pratice with y-sorting and different layers/masks between worlds/players/enemy again
+* Had basic AI for following and damage incoming
+
 ## 2024-10-6 - 2hrs: Godot Combat pratice and repo update
 
 * Finished with playlist "How to Make an RPG in Godot 4"  by DevWorm on youtube, with working combat and being able to transfer it to my game
