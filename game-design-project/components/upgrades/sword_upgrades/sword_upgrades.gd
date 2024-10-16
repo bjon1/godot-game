@@ -11,12 +11,12 @@ func _ready():
 		var random_index = randi() % shared_array.size()
 		random_button = shared_array[random_index]
 		get_child(random_button).show()
-		#random_button.grab_focus()
 		shared_array.erase(random_button)
 
 func disable():
 	for child in get_parent().get_children():
 		child.queue_free()
+	Engine.time_scale = 1
 	
 func _on_size_button_down():
 	sword.upgrade_size(0.25)

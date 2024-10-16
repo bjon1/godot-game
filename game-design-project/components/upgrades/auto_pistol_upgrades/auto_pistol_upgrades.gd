@@ -17,6 +17,7 @@ func _ready():
 func disable():
 	for child in get_parent().get_children():
 		child.queue_free()
+	Engine.time_scale = 1
 
 func _on_tree_exiting():
 	shared_array = reset_array

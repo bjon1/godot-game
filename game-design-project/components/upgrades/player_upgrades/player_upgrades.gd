@@ -16,6 +16,7 @@ func _ready():
 func disable():
 	for child in get_parent().get_children():
 		child.queue_free()
+	Engine.time_scale = 1
 
 	
 func _on_pickup_radius_button_down():

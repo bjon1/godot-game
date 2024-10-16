@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://c0v03nt4uprj3"]
+[gd_scene load_steps=7 format=4 uid="uid://c0v03nt4uprj3"]
 
 [ext_resource type="PackedScene" uid="uid://gdhygsqo8lql" path="res://actors/players/rectangle_guy/rectangle_guy.tscn" id="1_cjchs"]
 [ext_resource type="Texture2D" uid="uid://b8c317jcssj1" path="res://assets/pixel_art/tiles/placeholder_tile/TileSet.png" id="2_2ojwt"]
-[ext_resource type="PackedScene" uid="uid://cuth0o7rgaqd5" path="res://actors/enemies/test_XP_enemy/test_XP_enemy.tscn" id="3_1diek"]
+[ext_resource type="Script" path="res://worlds/test_world_2/path_2d.gd" id="3_4kst8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a011q"]
 texture = ExtResource("2_2ojwt")
@@ -17,6 +17,12 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_a011q")
 
+[sub_resource type="Curve2D" id="Curve2D_rxvdj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -285, -156, 0, 0, 0, 0, 1052, -156, 0, 0, 0, 0, 1050, 676, 0, 0, 0, 0, -299, 681, 0, 0, 0, 0, -285, -156)
+}
+point_count = 5
+
 [node name="test_world_2" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -24,79 +30,17 @@ tile_map_data = PackedByteArray("AAAKAAkAAQACAAAAAAALAAkAAQACAAAAAAAMAAkAAQACAAA
 tile_set = SubResource("TileSet_qkjby")
 
 [node name="rectangle_guy" parent="." instance=ExtResource("1_cjchs")]
-position = Vector2(390, 272)
+position = Vector2(386, 269)
 
-[node name="test_XP_enemy" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(554, 275)
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_rxvdj")
+script = ExtResource("3_4kst8")
 
-[node name="test_XP_enemy2" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(1190, 275)
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+unique_name_in_owner = true
+position = Vector2(-285, -156)
 
-[node name="test_XP_enemy3" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(933, 274)
+[node name="spawn_timer" type="Timer" parent="Path2D"]
+autostart = true
 
-[node name="test_XP_enemy4" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(680, 274)
-
-[node name="test_XP_enemy5" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(-135, 271)
-
-[node name="test_XP_enemy6" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(1442, 271)
-
-[node name="test_XP_enemy7" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(1568, 269)
-
-[node name="test_XP_enemy8" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(129, 289)
-
-[node name="test_XP_enemy9" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(1063, 275)
-
-[node name="test_XP_enemy10" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(1317, 273)
-
-[node name="test_XP_enemy11" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(-5, 271)
-
-[node name="test_XP_enemy12" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(197, 277)
-
-[node name="test_XP_enemy13" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(807, 276)
-
-[node name="test_XP_enemy14" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(290, 128)
-
-[node name="test_XP_enemy15" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(367, 121)
-
-[node name="test_XP_enemy16" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(472, 118)
-
-[node name="test_XP_enemy17" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(249, 440)
-
-[node name="test_XP_enemy18" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(372, 463)
-
-[node name="test_XP_enemy19" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(499, 453)
-
-[node name="test_XP_enemy20" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(620, 118)
-
-[node name="test_XP_enemy21" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(748, 118)
-
-[node name="test_XP_enemy22" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(602, 451)
-
-[node name="test_XP_enemy23" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(734, 442)
-
-[node name="test_XP_enemy24" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(891, 445)
-
-[node name="test_XP_enemy25" parent="." instance=ExtResource("3_1diek")]
-position = Vector2(887, 123)
+[connection signal="timeout" from="Path2D/spawn_timer" to="Path2D" method="_on_spawn_timer_timeout"]

@@ -21,8 +21,10 @@ func collect_xp(value: int) -> void:
 		level_up_value += 10
 		if xp_level == 5:
 			new_weapon_menu.enable()
+			Engine.time_scale = 0
 		else:
 			upgrade_menu.enable()
+			Engine.time_scale = 0
 		
 func upgrade_pickup_area(value: float) -> void:
 	pickup_area.shape.radius += (1 + value)

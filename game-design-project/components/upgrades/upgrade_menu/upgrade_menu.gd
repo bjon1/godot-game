@@ -8,6 +8,7 @@ extends Control
 @onready var player : Rectangle_Guy = get_tree().root.get_node("test_world_2/rectangle_guy")
 @onready var player_weapons: Node2D = get_tree().root.get_node("test_world_2/rectangle_guy/player_weapons")
 
+
 func enable():
 	weapon_check()
 	for i in range(3):
