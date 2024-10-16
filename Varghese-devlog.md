@@ -15,7 +15,7 @@
 * Problems: Player leaves screen, Enemies run into each other, Need to show enemy attacks, Develop more complex AI
 * (Ideally can finish by this weekend)
 
-## 2024-10-13 - 3hrs: Y-sorting/masking/collision
+## 2024-10-13 - 4hrs: Y-sorting/masking/collision
 * Had an error with my collision with player and enemy that crashed the game, unable to fix it
 * Pratice with y-sorting and different layers/masks between worlds/players/enemy again
 * Had basic AI for following and damage incoming
