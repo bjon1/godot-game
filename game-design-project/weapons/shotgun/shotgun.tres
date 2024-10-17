@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Gun_Resource" load_steps=3 format=3 uid="uid://baduojajty2hw"]
+[gd_resource type="Resource" script_class="Gun_Resource" load_steps=3 format=3 uid="uid://bsct81ydkubpi"]
 
 [ext_resource type="PackedScene" uid="uid://c337xrxh1k1t2" path="res://weapons/bullets/auto_pistol_bullet/auto_pistol_bullet.tscn" id="1_da5sb"]
 [ext_resource type="Script" path="res://resources/gun_resource.gd" id="1_ng3mq"]
