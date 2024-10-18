@@ -27,19 +27,22 @@ func _on_damage_button_down():
 	disable()
 
 func _on_reload_speed_button_down():
-	pass
 	auto_pistol.res.reload_speed -= 0.2
 	disable()
 
 func _on_ammo_button_down():
-	auto_pistol.res.ammo_reserve += 30
+	auto_pistol.res.ammo_reserve += 300
+	auto_pistol.res.ammo += auto_pistol.res.magazine_size
 	disable()
 
 func _on_fire_rate_button_down():
 	auto_pistol.res.fire_rate -= 0.02
 	disable()
 	
-func _on_accuracy_button_down():
+func _on_accuracy_button_down(): 	#array index 4
 	auto_pistol.res.accuracy += 0.1
+	if auto_pistol.res.accuracy >= 0.9:
+		#remove accuracy upgrade from upgrade list
+		reset_array = [0, 1, 2, 3] 
 	disable()
 	

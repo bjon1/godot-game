@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1gbh7rsrwfms"]
+
+[ext_resource type="PackedScene" uid="uid://l1ilgi5yqq1d" path="res://components/upgrades/upgrade_buttons/sword_buttons/base_sword_button/base_sword_button.tscn" id="1_qu6vv"]
+[ext_resource type="Script" path="res://components/upgrades/upgrade_buttons/sword_buttons/sword_speed/sword_speed.gd" id="2_ka3wy"]
+
+[node name="sword_speed" instance=ExtResource("1_qu6vv")]
+text = "|Sword|
+Increase
+Speed
+"
+script = ExtResource("2_ka3wy")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

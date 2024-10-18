@@ -32,6 +32,6 @@ func upgrade_pickup_area(value: float) -> void:
 func open_upgrade_menu() -> void:
 	pass
 	
-func _input(event):
-	if Input.is_action_just_pressed("reload"):
-		collect_xp(10)
+#func _input(event):
+	#if Input.is_action_just_pressed("reload"):
+		#collect_xp(10)

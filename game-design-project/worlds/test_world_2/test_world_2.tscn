@@ -26,6 +26,7 @@ point_count = 5
 [node name="test_world_2" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = -1
 tile_map_data = PackedByteArray("AAAKAAkAAQACAAAAAAALAAkAAQACAAAAAAAMAAkAAQACAAAAAAANAAkAAQACAAAAAAANAAgAAQACAAAAAAAMAAgAAQACAAAAAAALAAgAAQACAAAAAAAKAAgAAQACAAAAAAAKAAcAAQACAAAAAAALAAcAAQACAAAAAAAMAAcAAQACAAAAAAANAAcAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_qkjby")
 

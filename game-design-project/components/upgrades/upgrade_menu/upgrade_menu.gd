@@ -1,32 +1,26 @@
 extends Control
 
 @onready var container = $HBoxContainer
-@onready var sword_upgrades : PackedScene = preload("res://components/upgrades/sword_upgrades/sword_upgrades.tscn")
-@onready var player_upgrades : PackedScene = preload("res://components/upgrades/player_upgrades/player_upgrades.tscn")
-@onready var auto_pistol_upgrades : PackedScene = preload("res://components/upgrades/auto_pistol_upgrades/auto_pistol_upgrades.tscn")
-@onready var upgrade_array : Array[PackedScene] = [sword_upgrades, player_upgrades]
-@onready var player : Rectangle_Guy = get_tree().root.get_node("test_world_2/rectangle_guy")
-@onready var player_weapons: Node2D = get_tree().root.get_node("test_world_2/rectangle_guy/player_weapons")
-
+var upgrades_dict : Dictionary= {
+	"sword_damage": preload("res://components/upgrades/upgrade_buttons/sword_buttons/sword_damage/sword_damage.tscn"),
+	"sword_size": preload("res://components/upgrades/upgrade_buttons/sword_buttons/sword_size/sword_size.tscn"),
+	"sword_speed": preload("res://components/upgrades/upgrade_buttons/sword_buttons/sword_speed/sword_speed.tscn"),
+} 
 
 func enable():
-	weapon_check()
-	for i in range(3):
-		var random_index : int = randi() % upgrade_array.size()
-		var new_upgrade : PackedScene = upgrade_array[random_index]
-		# Check if upgrade_scene is a valid PackedScene before instantiation
-		if new_upgrade:
-			var upgrade_instance : Control = new_upgrade.instantiate()
-			#upgrade_instance.generate_upgrade()
-			container.add_child(upgrade_instance)
-		else:
-			print("Error: upgrade_scene is null at index ", random_index)
-		# Add spacing
+	# Get the keys from the dictionary
+	var keys = upgrades_dict.keys()
+	# Shuffle the keys randomly
+	keys.shuffle()
+	# Select the first three keys
+	var selected_keys = keys.slice(0, 3)
+	print(selected_keys)
+	for key in selected_keys:
+		# Instance the scene associated with the key and add it to the container
+		var upgrade_scene = upgrades_dict[key].instantiate()
+		container.add_child(upgrade_scene)
+		
 		var spacer : Control = Control.new()
-		spacer.custom_minimum_size = Vector2(160,0)
+		spacer.custom_minimum_size = Vector2(20,0)
 		container.add_child(spacer)
-
-func weapon_check():
-	if player.xp_level == 6:
-		print("pistol upgrades added")
-		upgrade_array.append(auto_pistol_upgrades)
+		

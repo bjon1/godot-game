@@ -45,7 +45,7 @@ shader_parameter/border_thickness = 0.127
 shader_parameter/blue_color = Color(0, 0.5, 1, 1)
 
 [node name="XP" type="Area2D"]
-z_index = -1
+z_index = 2
 material = SubResource("ShaderMaterial_5di5i")
 collision_layer = 0
 collision_mask = 2

@@ -3,4 +3,5 @@
 [ext_resource type="PackedScene" uid="uid://cuth0o7rgaqd5" path="res://actors/enemies/test_XP_enemy/test_XP_enemy.tscn" id="1_fhqgu"]
 
 [node name="follow_enemy" instance=ExtResource("1_fhqgu")]
+z_index = 2
 speed = 200.0
