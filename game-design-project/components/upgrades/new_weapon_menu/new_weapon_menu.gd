@@ -11,9 +11,11 @@ func enable():
 func disable():
 	queue_free()
 	Engine.time_scale = 1
-	
-func _on_button_button_down():
+
+func _on_button_button_up():
 	var new_weapon = auto_pistol.instantiate()
 	player_weapons.add_child(new_weapon)
 	player._switch_weapon(1)
+	var main_menu : Main_Menu = get_parent().get_node("UpgradeMenu")
+	main_menu.upgrades_dict.merge(main_menu.pistol_upgrades_dict)
 	disable()

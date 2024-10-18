@@ -21,4 +21,4 @@ offset_bottom = 440.0
 text = "|New Weapon|
 Auto Pistol"
 
-[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
