@@ -33,15 +33,16 @@ tile_set = SubResource("TileSet_qkjby")
 [node name="rectangle_guy" parent="." instance=ExtResource("1_cjchs")]
 position = Vector2(386, 269)
 
-[node name="Path2D" type="Path2D" parent="."]
+[node name="Path2D" type="Path2D" parent="rectangle_guy"]
+position = Vector2(-386, -269)
 curve = SubResource("Curve2D_rxvdj")
 script = ExtResource("3_4kst8")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+[node name="PathFollow2D" type="PathFollow2D" parent="rectangle_guy/Path2D"]
 unique_name_in_owner = true
 position = Vector2(-285, -156)
 
-[node name="spawn_timer" type="Timer" parent="Path2D"]
+[node name="spawn_timer" type="Timer" parent="rectangle_guy/Path2D"]
 autostart = true
 
-[connection signal="timeout" from="Path2D/spawn_timer" to="Path2D" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="rectangle_guy/Path2D/spawn_timer" to="rectangle_guy/Path2D" method="_on_spawn_timer_timeout"]
