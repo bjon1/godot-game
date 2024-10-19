@@ -31,6 +31,6 @@ func enable():
 		var upgrade_scene = upgrades_dict[key].instantiate()
 		container.add_child(upgrade_scene)
 		
-		var spacer : Control = Control.new()
-		spacer.custom_minimum_size = Vector2(20,0)
-		container.add_child(spacer)
+		#var spacer : Control = Control.new()
+		#spacer.custom_minimum_size = Vector2(20,0)
+		#container.add_child(spacer)

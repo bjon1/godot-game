@@ -2,6 +2,7 @@ extends Button
 class_name Base_Pistol_Button
 
 @onready var auto_pistol : Auto_Pistol = get_tree().root.get_child(0).get_node("rectangle_guy/player_weapons/auto_pistol")
+@onready var player_weapons : Node2D = get_tree().root.get_child(0).get_node("rectangle_guy/player_weapons")
 
 func close():
 	for child in get_parent().get_children():

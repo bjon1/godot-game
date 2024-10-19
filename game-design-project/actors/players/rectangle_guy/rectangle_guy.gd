@@ -25,6 +25,7 @@ func collect_xp(value: int) -> void:
 		else:
 			upgrade_menu.enable()
 			Engine.time_scale = 0
+			
 		
 func upgrade_pickup_area(value: float) -> void:
 	pickup_area.shape.radius += (1 + value)

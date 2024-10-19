@@ -9,4 +9,45 @@ Inscrease
 Reload Speed"
 script = ExtResource("2_wwp0h")
 
+[node name="level_1" type="CheckBox" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -24.0
+grow_vertical = 0
+
+[node name="level_2" type="CheckBox" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -43.0
+offset_bottom = -19.0
+grow_vertical = 0
+
+[node name="level_3" type="CheckBox" parent="." index="2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -63.0
+offset_bottom = -39.0
+grow_vertical = 0
+
+[node name="level_4" type="CheckBox" parent="." index="3"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -83.0
+offset_bottom = -59.0
+grow_vertical = 0
+
 [connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
