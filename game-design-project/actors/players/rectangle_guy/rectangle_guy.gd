@@ -33,6 +33,12 @@ func upgrade_pickup_area(value: float) -> void:
 func open_upgrade_menu() -> void:
 	pass
 	
+func destroy():
+	if health <= 0 :
+		var game_over_screen = preload("res://components/game_over_screen/game_over_screen.tscn")
+		var game_over_scene = game_over_screen.instantiate()
+		add_child(game_over_scene)
+		Engine.time_scale = 0
 #func _input(event):
 	#if Input.is_action_just_pressed("reload"):
 		#collect_xp(10)
