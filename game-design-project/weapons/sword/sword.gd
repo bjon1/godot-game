@@ -26,7 +26,8 @@ func _process(delta):
 
 
 func swing():
-	animation_player.play("swing")
+	if Engine.time_scale != 0:
+		animation_player.play("swing")
 	
 func upgrade_speed(value: float):
 	swing_rate = swing_rate * (1 + value)

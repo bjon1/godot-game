@@ -5,7 +5,7 @@
 
 [node name="pistol_reload_speed" instance=ExtResource("1_r2jwy")]
 text = "|Pistol|
-Inscrease
+Increase
 Reload Speed"
 script = ExtResource("2_wwp0h")
 

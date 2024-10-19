@@ -37,7 +37,8 @@ func _ready() -> void:
 	res.initialize()
 	
 func _process(_delta: float) -> void:
-	get_input()
+	if Engine.time_scale != 0:
+		get_input()
 
 func get_input() -> void:
 	'''
