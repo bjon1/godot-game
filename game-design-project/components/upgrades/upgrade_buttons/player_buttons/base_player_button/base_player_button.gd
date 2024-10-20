@@ -8,6 +8,7 @@ func close():
 	for child in get_parent().get_children():
 		child.queue_free()
 	Engine.time_scale = 1
+	player.is_paused = false
 	
 func remove_upgrade(string : String):
 	get_parent().get_parent().upgrades_dict.erase(string)

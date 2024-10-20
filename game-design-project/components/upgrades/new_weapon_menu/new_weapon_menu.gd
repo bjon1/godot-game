@@ -11,7 +11,8 @@ func enable():
 func disable():
 	queue_free()
 	Engine.time_scale = 1
-
+	player.is_paused = false
+	
 func _on_button_button_up():
 	var new_weapon = auto_pistol.instantiate()
 	player_weapons.add_child(new_weapon)

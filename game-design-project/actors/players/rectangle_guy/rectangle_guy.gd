@@ -4,6 +4,7 @@ class_name Rectangle_Guy
 var xp : int = 0
 var level_up_value : int = 100
 var xp_level : int = 0
+var is_paused : bool = false
 
 @onready var xp_sound : AudioStreamPlayer2D = $sfx/xp_sound
 @onready var pickup_area= $PickupArea/CollisionShape2D
@@ -20,18 +21,18 @@ func collect_xp(value: int) -> void:
 		xp_level += 1
 		level_up_value += 10
 		if xp_level == 5:
-			new_weapon_menu.enable()
-			Engine.time_scale = 0
+			if not is_paused:
+				new_weapon_menu.enable()
+				Engine.time_scale = 0
+				is_paused = true
 		else:
-			upgrade_menu.enable()
-			Engine.time_scale = 0
-			
-		
+			if not is_paused:
+				upgrade_menu.enable()
+				Engine.time_scale = 0
+				is_paused = true
+				
 func upgrade_pickup_area(value: float) -> void:
 	pickup_area.shape.radius += (1 + value)
-	
-func open_upgrade_menu() -> void:
-	pass
 	
 func destroy():
 	if health <= 0 :

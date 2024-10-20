@@ -12,7 +12,14 @@ func _ready():
 
 func _physics_process(delta):
 	var direction = (player.global_position - position).normalized()
-	position += direction * speed * delta
+	# Only move towards the player if we're further than the threshold
+	if position.distance_to(player.global_position) >= 10:
+		position += direction * speed * delta
+	else:
+		# If close enough, collect XP and queue free
+		if Engine.time_scale == 1:
+			player.collect_xp(xp_value)
+			queue_free()
 	
 func _on_area_entered(area : Area2D) -> void:
 	set_physics_process(true)
@@ -20,7 +27,3 @@ func _on_area_entered(area : Area2D) -> void:
 func _on_area_exited(area):
 	set_physics_process(false)
 	
-func _on_body_entered(body):
-	if body.has_method("collect_xp"):
-		body.collect_xp(xp_value)
-	queue_free()
