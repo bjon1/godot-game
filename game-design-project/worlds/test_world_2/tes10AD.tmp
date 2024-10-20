@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=4 uid="uid://c0v03nt4uprj3"]
+
+[ext_resource type="PackedScene" uid="uid://gdhygsqo8lql" path="res://actors/players/rectangle_guy/rectangle_guy.tscn" id="1_cjchs"]
+[ext_resource type="Texture2D" uid="uid://b8c317jcssj1" path="res://assets/pixel_art/tiles/placeholder_tile/TileSet.png" id="2_2ojwt"]
+[ext_resource type="Script" path="res://worlds/test_world_2/path_2d.gd" id="3_4kst8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a011q"]
+texture = ExtResource("2_2ojwt")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qkjby"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_a011q")
+
+[sub_resource type="Curve2D" id="Curve2D_rxvdj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -285, -156, 0, 0, 0, 0, 1052, -156, 0, 0, 0, 0, 1050, 676, 0, 0, 0, 0, -299, 681, 0, 0, 0, 0, -285, -156)
+}
+point_count = 5
+
+[node name="test_world_2" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = -1
+tile_map_data = PackedByteArray("AAAKAAkAAQACAAAAAAALAAkAAQACAAAAAAAMAAkAAQACAAAAAAANAAkAAQACAAAAAAANAAgAAQACAAAAAAAMAAgAAQACAAAAAAALAAgAAQACAAAAAAAKAAgAAQACAAAAAAAKAAcAAQACAAAAAAALAAcAAQACAAAAAAAMAAcAAQACAAAAAAANAAcAAQACAAAAAAA=")
+tile_set = SubResource("TileSet_qkjby")
+
+[node name="rectangle_guy" parent="." instance=ExtResource("1_cjchs")]
+position = Vector2(386, 269)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_rxvdj")
+script = ExtResource("3_4kst8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+unique_name_in_owner = true
+position = Vector2(-285, -156)
+
+[node name="spawn_timer" type="Timer" parent="Path2D"]
+autostart = true
+
+[connection signal="timeout" from="Path2D/spawn_timer" to="Path2D" method="_on_spawn_timer_timeout"]

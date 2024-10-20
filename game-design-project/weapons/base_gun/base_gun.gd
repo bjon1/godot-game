@@ -9,12 +9,12 @@ to not be affected by the weapon's position
 after firing.
 '''
 
+@export var res : Gun_Resource
+@onready var main_scene = get_tree().root.get_child(0)
+
 ##State Machine
 enum states{IDLE, FIRING, RELOADING, CHARGING}
 var current_state : states = states.IDLE
-
-@export var main_scene : Node2D
-@export var res : Gun_Resource
 
 #Node initialization
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
@@ -30,9 +30,6 @@ var current_state : states = states.IDLE
 @onready var shoot_animation_length : float = animation_player.get_animation("shoot").length
 
 #states
-var is_shooting = false
-var is_reloading = false
-
 func _ready() -> void:
 	add_child(res.fire_rate_timer)
 	add_child(res.burst_delay_timer)
@@ -40,7 +37,8 @@ func _ready() -> void:
 	res.initialize()
 	
 func _process(_delta: float) -> void:
-	get_input()
+	if Engine.time_scale != 0:
+		get_input()
 
 func get_input() -> void:
 	'''
