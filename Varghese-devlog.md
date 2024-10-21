@@ -7,6 +7,13 @@
 * [Itch.io](https://jeiss3341.itch.io)
 * [Itch.io2](https://jeiss3341.itch.io/pratice-project)
 
+
+## 2024-10-20 - 6 hrs: Trying to solve issues with game
+* Main issue is trying to clean up the code, as of now it's difficult to add attack timers nodes for enemy to the code for some reason but once this is solved the entire project is very easy
+
+## 2024-10-19 - 3 hrs: Fix Camera and couple errors so game looks ok now
+* Fixed the camera on the player
+
 ## 2024-10-15 - 8hrs: Fixing Errors
 * Fixed Y-sort, layers and mask for background, player and enemies
 * Fixed basic attack one shotting enemy
