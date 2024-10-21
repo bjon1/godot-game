@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dun3bgi7efq25"]
+
+[ext_resource type="PackedScene" uid="uid://dw71f5l2xi4us" path="res://components/upgrades/upgrade_buttons/pistol_buttons/base_pistol_button/base_pistol_button.tscn" id="1_eygf5"]
+[ext_resource type="Script" path="res://components/upgrades/upgrade_buttons/pistol_buttons/pistol_damage/pistol_damage.gd" id="2_adsa3"]
+
+[node name="pistol_damage" instance=ExtResource("1_eygf5")]
+text = "|Pistol|
+Increase
+Damage"
+script = ExtResource("2_adsa3")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

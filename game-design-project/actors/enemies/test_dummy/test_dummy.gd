@@ -9,10 +9,9 @@ func _ready() -> void:
 
 func take_damage(damage_amount : float):
 	damage_per_second += damage_amount
-	animation_player.play("hurt")
-	animation_player.queue("idle")
+	#animation_player.play("hurt")
+	#animation_player.queue("idle")
 	label.set_text(str(damage_amount) + "dmg/" + str(damage_per_second) + "dps")
 
-		
 func _on_damage_per_second_timer_timeout() -> void:
 	damage_per_second = 0
