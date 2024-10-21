@@ -1,4 +1,4 @@
-### 20204-10-19 - 4hrs: Idividual upgrade levels, Game over screen, and bug fixed
+### 20204-10-19 - 4hrs: Individual upgrade levels, Game over screen, and bug fixed
 * Fixed xp from leveling up player too fast before game pauses
 * Some upgrades now have a limit indicated by a check box on the left
 * Game over screen has a "quit" and "restart" button
