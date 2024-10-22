@@ -3,7 +3,7 @@
 * Health bar now displays max health along with current health
 * The game over screen now displays a final score when the player is destroyed
   
-### 2024-10-19 - 4hrs: Individual upgrade levels, Game over screen, and bug fixed
+### 2024-10-19 - 4hrs: Upgrade limits, game over screen, and bug fixes
 * Fixed xp from leveling up player too fast before game pauses
 * Some upgrades now have a limit indicated by a check box on the left
 * Game over screen has a "quit" and "restart" button
@@ -12,8 +12,8 @@
 ### 2024-10-18 - 6hrs: Upgrade system revamped
 * Upgrade buttons are now individual scenes
 * Upgrade buttons are added and removed from one dictionary to handle all upgrades
-* Fixed bug with xapitalizatio mismatch
-* Limited firerate upgrade to decrease by 0.2 seconds
+* Fixed bug with capitalization mismatch
+* Limited fire rate upgrade to decrease by 0.2 seconds
 
 ### 2024-10-16 - 3hrs: Made enemies chase player & leveling up pauses the game
 * Game now pauses with Engine.time_scale = 0 as opposed to disabling movement
