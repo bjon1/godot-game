@@ -4,7 +4,8 @@ extends Control
 @onready var health_bar : ProgressBar = $HealthBar
 @onready var xp_level : Label = $xp_level
 @onready var rectangle_guy : Rectangle_Guy = $"../.."
-@onready var health : Label = $health
+@onready var current_health = $health/current_health
+@onready var max_health = $health/max_health
 @onready var mag_size : Label = $ammo/ammo_ammount
 @onready var reserve : Label = $ammo/reserve
 @onready var player_weapons = $"../../player_weapons"
@@ -23,7 +24,8 @@ func _process(delta):
 	health_bar.max_value = rectangle_guy.max_health
 	experience_bar.max_value = rectangle_guy.level_up_value
 	experience_bar.value = rectangle_guy.xp
-	health.text = str(rectangle_guy.health)
+	current_health.text = str(rectangle_guy.health)
+	max_health.text = str(rectangle_guy.max_health)
 	xp_level.text = str(rectangle_guy.xp_level)
 
 func weapon_check():
