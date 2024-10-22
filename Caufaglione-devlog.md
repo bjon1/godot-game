@@ -37,7 +37,7 @@
 * A UI controller attached to the character updates every frame
   
 ### 2024-10-04 - 3hrs: working on xp drop and pickup 
-* Watched video (https://youtu.be/-ep3ARuCdk0?si=gLV5ln3cJLgYsC7U)
+* Watched video on enemy item drops (https://youtu.be/-ep3ARuCdk0?si=gLV5ln3cJLgYsC7U)
 * Created an xp consumable that drops randomly when an enemy is eliminated. 
 
 ### 2024-10-03 - 1hr: worked on progress bars 
