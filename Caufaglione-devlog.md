@@ -18,6 +18,7 @@
 ### 2024-10-16 - 3hrs: Made enemies chase player & leveling up pauses the game
 * Game now pauses with Engine.time_scale = 0 as opposed to disabling movement
 * Enemies have a vector that points toward the player and spawn every second on a random path location
+* Enemies also avoid each other by subtracting the vectors of close enemies 
 
 ### 2024-10-14 - 6hrs: Upgrade menu changes and bug fixes
 * Reworked upgrade menu to grab three random upgrades choosing from (Player upgrades, Sword upgrades, or Pistol upgrades)
