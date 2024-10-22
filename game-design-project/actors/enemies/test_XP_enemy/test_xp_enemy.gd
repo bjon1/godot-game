@@ -1,6 +1,6 @@
 extends Base_Enemy
 
-@onready var player : Rectangle_Guy = get_tree().root.get_node("test_world_2/rectangle_guy")
+@onready var player : Rectangle_Guy = get_tree().root.get_child(0).get_node("rectangle_guy")
 
 var avoidance_distance = 50 # Distance to start avoiding other enemies
 var max_avoidance_force = 100 # Maximum force of avoidance
