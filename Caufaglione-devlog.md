@@ -1,4 +1,9 @@
-### 20204-10-19 - 4hrs: Individual upgrade levels, Game over screen, and bug fixed
+### 2024-10-22 - 2hrs: New controls and HUD improvements
+* Player can now switch weapons with number keys "1" and "2" instead of only scroll wheel
+* Health bar now displays max health along with current health
+* The game over screen now displays a final score when the player is destroyed
+  
+### 2024-10-19 - 4hrs: Individual upgrade levels, Game over screen, and bug fixed
 * Fixed xp from leveling up player too fast before game pauses
 * Some upgrades now have a limit indicated by a check box on the left
 * Game over screen has a "quit" and "restart" button
