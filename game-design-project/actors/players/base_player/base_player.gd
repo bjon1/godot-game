@@ -41,6 +41,10 @@ func _process(_delta: float) -> void:
 		_switch_weapon(UP)
 	if Input.is_action_just_pressed("scroll_down"):
 		_switch_weapon(DOWN)
+	if Input.is_action_just_pressed("slot_1"):
+		select_weapon(0)
+	if Input.is_action_just_pressed("slot_2"):
+		select_weapon(1)
 	
 	move_and_slide()
 	
@@ -55,8 +59,12 @@ func _switch_weapon(direction : int) -> void:
 		if index > weapons.get_child_count() - 1:
 			index = 0
 			
-	current_weapon.hide()
-	current_weapon.set_process(false)
-	current_weapon = weapons.get_child(index)
-	current_weapon.set_process(true)
-	current_weapon.show()
+	select_weapon(index)
+
+func select_weapon(slot : int) -> void:
+	if slot <= weapons.get_child_count() - 1:
+		current_weapon.hide()
+		current_weapon.set_process(false)
+		current_weapon = weapons.get_child(slot)
+		current_weapon.set_process(true)
+		current_weapon.show()

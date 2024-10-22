@@ -42,6 +42,10 @@ func destroy():
 		var game_over_scene = game_over_screen.instantiate()
 		add_child(game_over_scene)
 		Engine.time_scale = 0
+		
 #func _input(event):
 	#if Input.is_action_just_pressed("reload"):
-		#collect_xp(10)
+		#if Engine.time_scale == 0:
+			#Engine.time_scale = 1
+		#elif Engine.time_scale == 1:
+			#Engine.time_scale = 0
