@@ -42,5 +42,6 @@ func _on_hurt_box_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):
 		body.take_damage(damage)
 		
+		
 func set_collision():
 	hurt_box.set_collision_mask_value(weapon_target + 2, true)

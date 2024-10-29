@@ -7,6 +7,7 @@ var level_up_value : int = 300
 var xp_level : int = 0
 var is_paused : bool = false
 
+@onready var level_up_sound : AudioStreamPlayer2D = $sfx/level_up_sound
 @onready var xp_sound : AudioStreamPlayer2D = $sfx/xp_sound
 @onready var pickup_area= $PickupArea/CollisionShape2D
 @onready var player_weapons = $player_weapons
@@ -19,6 +20,7 @@ func collect_xp(value: int) -> void:
 	xp += value
 	score += value
 	if xp >= level_up_value:
+		level_up_sound.play()
 		xp = 0
 		xp_level += 1
 		level_up_value += 20

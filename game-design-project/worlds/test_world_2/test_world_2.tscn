@@ -1,21 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://c0v03nt4uprj3"]
+[gd_scene load_steps=4 format=3 uid="uid://c0v03nt4uprj3"]
 
 [ext_resource type="PackedScene" uid="uid://gdhygsqo8lql" path="res://actors/players/rectangle_guy/rectangle_guy.tscn" id="1_cjchs"]
-[ext_resource type="Texture2D" uid="uid://b8c317jcssj1" path="res://assets/pixel_art/tiles/placeholder_tile/TileSet.png" id="2_2ojwt"]
 [ext_resource type="Script" path="res://worlds/test_world_2/path_2d.gd" id="3_4kst8"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a011q"]
-texture = ExtResource("2_2ojwt")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_qkjby"]
-tile_size = Vector2i(32, 32)
-sources/1 = SubResource("TileSetAtlasSource_a011q")
 
 [sub_resource type="Curve2D" id="Curve2D_rxvdj"]
 _data = {
@@ -25,10 +11,14 @@ point_count = 5
 
 [node name="test_world_2" type="Node2D"]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-z_index = -1
-tile_map_data = PackedByteArray("AAAKAAkAAQACAAAAAAALAAkAAQACAAAAAAAMAAkAAQACAAAAAAANAAkAAQACAAAAAAANAAgAAQACAAAAAAAMAAgAAQACAAAAAAALAAgAAQACAAAAAAAKAAgAAQACAAAAAAAKAAcAAQACAAAAAAALAAcAAQACAAAAAAAMAAcAAQACAAAAAAANAAcAAQACAAAAAAA=")
-tile_set = SubResource("TileSet_qkjby")
+[node name="wasd" type="Label" parent="."]
+offset_left = 33.0
+offset_top = 194.0
+offset_right = 322.0
+offset_bottom = 331.0
+theme_override_colors/font_color = Color(0.631373, 0.8, 0.647059, 1)
+theme_override_font_sizes/font_size = 100
+text = "WASD"
 
 [node name="rectangle_guy" parent="." instance=ExtResource("1_cjchs")]
 position = Vector2(386, 269)
@@ -44,5 +34,13 @@ position = Vector2(-285, -156)
 
 [node name="spawn_timer" type="Timer" parent="rectangle_guy/Path2D"]
 autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="rectangle_guy"]
+z_index = -1
+offset_left = -591.0
+offset_top = -329.0
+offset_right = 590.0
+offset_bottom = 332.0
+color = Color(0.560784, 0.72549, 0.588235, 1)
 
 [connection signal="timeout" from="rectangle_guy/Path2D/spawn_timer" to="rectangle_guy/Path2D" method="_on_spawn_timer_timeout"]

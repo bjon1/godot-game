@@ -10,6 +10,7 @@ extends Control
 @onready var reserve : Label = $ammo/reserve
 @onready var player_weapons = $"../../player_weapons"
 @onready var ammo = $ammo
+@onready var upgrade_sound = $"../../sfx/upgrade_sound"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -27,6 +28,7 @@ func _process(delta):
 	current_health.text = str(rectangle_guy.health)
 	max_health.text = str(rectangle_guy.max_health)
 	xp_level.text = str(rectangle_guy.xp_level)
+	
 
 func weapon_check():
 	if player_weapons.has_node("auto_pistol"):
