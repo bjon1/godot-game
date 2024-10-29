@@ -1,9 +1,3 @@
-# Fall 2024 - Intro to Game Design @ SUNY New Paltz
-* Name: Michael de Freitas
-* [Trello Board](https://trello.com/b/qQN1dU0s/new-paltz-game-design-final-project-template)
-* [Proposal](Freitas-proposal.pdf)
-* [itch.io](https://mfreit50.itch.io/endless-survival-game)
-  
 ### 2024-9-21 – 3hr worked on destructible tile maps 
 * tile maps noew have the ability to be destructed when given normalized collision coordinates
 
@@ -19,3 +13,17 @@
 
 ### 2024-9-28 – 6hr worked on explosion mechanic for tile map
 * Created a system where tilemaps can explode given a blast radius using geometry of a semi-circle (original algorithm)
+
+### 2024-10-20 - 1hr worked on a script to generate block sprite sheets
+* A python script that when given a tile, will generate breaking effects depending on the tile's durability and create a sprite sheet out of it
+
+### 2024-11-21 - 4hr worked on procedural generation
+* Added procedural generation as a game mechanic
+* Procedurally generated tiles are destructible
+* Used tutorial (https://www.youtube.com/watch?v=rlUzizExe2Q&pp=ygUbcHJvY2VkdXJhbCBnZW5lcmF0aW9uIGdvZG90)
+
+### 2024-11-26 - 6hr worked on a chunking system
+* Created a hashset data structure for godot
+* Created a system to divide subsects of the world into a chunk coordinate
+* Created a system that keeps track of loaded chunks in the world
+* Created a system that can load chunks depending on render distance
