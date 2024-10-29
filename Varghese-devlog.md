@@ -10,12 +10,12 @@
 ## 2024-10-28 4 hrs: Made sweep attack
 *Created enemy do a sweep attack following the player position from a certain distance, however the main problem was that it's primarly doing the 'dash' attack over melee since it's not in distance to do melee attack
 * following this tutorial, (Parts 12) to have a better understanding of rolling attacks
-*https://www.youtube.com/playlist?list=PL9FzW-m48fn2SlrW0KoLT4n5egNdX-W9a
+* https://www.youtube.com/playlist?list=PL9FzW-m48fn2SlrW0KoLT4n5egNdX-W9a
 
 ## 2024-10-28 4 hrs: Fixed assassin state machines
 * Connected all the main functions with state machines so it will flow a lot better since coding it oringially was a lot harder to have the enemy AI work correctly
 * following this tutorial, (Parts 11) to have a better understanding of delayed hitboxes
-*https://www.youtube.com/playlist?list=PL9FzW-m48fn2SlrW0KoLT4n5egNdX-W9a
+* https://www.youtube.com/playlist?list=PL9FzW-m48fn2SlrW0KoLT4n5egNdX-W9a
 
 
 ## 2024-10-23 6 hrs: Fixed assassin AI
@@ -23,7 +23,7 @@
 * Added delay and cetain times to hitbox to where enemy could attack
 * Fixed camera and map problem where enemies would stop rending in the top 3rd of the map(removed map)
 * following this tutorial, (Parts 5, 6, 9, 10) to have a better understanding of State machines
-*https://www.youtube.com/playlist?list=PL9FzW-m48fn2SlrW0KoLT4n5egNdX-W9a
+* https://www.youtube.com/playlist?list=PL9FzW-m48fn2SlrW0KoLT4n5egNdX-W9a
 
 ## 2024-10-22 6 hrs: Fixed assassin 'telporting' and stop rendering in the game
 * My main problem was the way I coded the enemy would be very dependant on the player.gd so I had to change it so it's more independent
