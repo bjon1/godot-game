@@ -1,3 +1,7 @@
+### 2024-10-29 - 1hrs: Increased difficulty
+* Now every 10 levels a Boss spawns (different color, larger, more health, slower)
+* Every player level increase, enemies get 10 more health
+  
 ### 2024-10-22 - 2hrs: New controls and HUD improvements
 * Player can now switch weapons with number keys "1" and "2" instead of only scroll wheel
 * Health bar now displays max health along with current health
