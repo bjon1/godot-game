@@ -10,3 +10,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	value = test_xp_enemy.health
+	max_value = test_xp_enemy.max_health

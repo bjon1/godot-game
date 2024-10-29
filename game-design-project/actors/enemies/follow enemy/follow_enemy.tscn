@@ -1,7 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6bq0bgtfes44"]
+[gd_scene load_steps=4 format=3 uid="uid://b6bq0bgtfes44"]
 
 [ext_resource type="PackedScene" uid="uid://cuth0o7rgaqd5" path="res://actors/enemies/test_XP_enemy/test_XP_enemy.tscn" id="1_fhqgu"]
+
+[sub_resource type="Shader" id="Shader_iv7i5"]
+code = "shader_type canvas_item;
+uniform vec4 flash_color : source_color;
+uniform float flash_value : hint_range(0.0, 1.0, 0.1);
+
+void fragment() {
+	vec4 texture_color = texture(TEXTURE, UV);
+	COLOR = mix(texture_color, flash_color, flash_value);
+	COLOR.a = texture_color.a;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_33x21"]
+resource_local_to_scene = true
+shader = SubResource("Shader_iv7i5")
+shader_parameter/flash_color = Color(1, 1, 1, 0.564706)
+shader_parameter/flash_value = null
 
 [node name="follow_enemy" groups=["enemies"] instance=ExtResource("1_fhqgu")]
 z_index = 2
 speed = 200.0
+
+[node name="AnimatedSprite2D" parent="." index="4"]
+material = SubResource("ShaderMaterial_33x21")

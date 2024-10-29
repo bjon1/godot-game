@@ -8,7 +8,7 @@ var avoidance_weight = 0.4
 var player_weight = 1.0
 
 func _ready():
-	health = ((player.xp_level + 1) * 10)
+	health = ((player.xp_level + 1) * 60)
 	max_health = health
 
 func _physics_process(delta):

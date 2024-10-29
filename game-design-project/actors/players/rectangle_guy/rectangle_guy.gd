@@ -3,7 +3,7 @@ class_name Rectangle_Guy
 
 var xp : int = 0
 var score : int = 0
-var level_up_value : int = 100
+var level_up_value : int = 300
 var xp_level : int = 0
 var is_paused : bool = false
 
@@ -21,7 +21,7 @@ func collect_xp(value: int) -> void:
 	if xp >= level_up_value:
 		xp = 0
 		xp_level += 1
-		level_up_value += 10
+		level_up_value += 20
 		if xp_level == 5:
 			if not is_paused:
 				new_weapon_menu.enable()
