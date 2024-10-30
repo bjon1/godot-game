@@ -7,7 +7,7 @@ extends Control
 func enable():
 	show()
 	get_child(0).show()
-	
+
 func disable():
 	queue_free()
 	Engine.time_scale = 1

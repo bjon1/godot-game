@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbk16fgii6y7o"]
+[gd_scene load_steps=9 format=3 uid="uid://dbk16fgii6y7o"]
 
 [ext_resource type="Script" path="res://weapons/sword/sword.gd" id="1_olllg"]
 [ext_resource type="Texture2D" uid="uid://570bb3muvbk7" path="res://weapons/sword/Iicon_32_28.png" id="2_2nxgy"]
 [ext_resource type="Script" path="res://weapons/sword/debug_label.gd" id="3_0nowt"]
+[ext_resource type="AudioStream" uid="uid://dhehe35fc03p" path="res://assets/sound_fx/general_sfx/Hit.wav" id="4_6uyuf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w8m6"]
 size = Vector2(9, 37)
@@ -108,5 +109,10 @@ offset_right = 2.0
 offset_bottom = 37.0
 text = "Value:"
 script = ExtResource("3_0nowt")
+
+[node name="sfx" type="Node2D" parent="."]
+
+[node name="hit_sound" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("4_6uyuf")
 
 [connection signal="body_entered" from="pivot/Area2D" to="." method="_on_hurt_box_body_entered"]

@@ -2,6 +2,7 @@ extends Path2D
 
 const FOLLOW_ENEMY = preload("res://actors/enemies/follow enemy/follow_enemy.tscn")
 const BOSS_ENEMY  = preload("res://actors/enemies/boss_enemy/boss_enemy.tscn")
+
 @onready var MAIN_SCENE = get_tree().root.get_child(0)
 @onready var player : Rectangle_Guy = get_tree().root.get_child(0).get_node("rectangle_guy")
 
@@ -18,6 +19,7 @@ func spawn_mob():
 		%PathFollow2D.progress_ratio = randf()
 		new_boss.global_position = %PathFollow2D.global_position
 		MAIN_SCENE.add_child(new_boss)
+		player.play_boss_spawn_sound()
 	if (player.xp_level % 10 != 0):
 		changed_level = false
 

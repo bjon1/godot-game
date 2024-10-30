@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://gdhygsqo8lql"]
+[gd_scene load_steps=28 format=3 uid="uid://gdhygsqo8lql"]
 
 [ext_resource type="Script" path="res://actors/players/rectangle_guy/rectangle_guy.gd" id="2_0k4na"]
 [ext_resource type="Script" path="res://actors/players/rectangle_guy/player_weapons.gd" id="2_l7p5m"]
@@ -14,6 +14,8 @@
 [ext_resource type="AudioStream" uid="uid://cqy45lv3ppuxy" path="res://assets/sound_fx/general_sfx/levelup.wav" id="11_rmspw"]
 [ext_resource type="AudioStream" uid="uid://biv43jl6dibci" path="res://assets/sound_fx/general_sfx/levelup2.wav" id="12_qt0m1"]
 [ext_resource type="AudioStream" uid="uid://kw7oiwygrb4c" path="res://assets/sound_fx/general_sfx/Hurt.wav" id="14_s1oik"]
+[ext_resource type="AudioStream" uid="uid://csmlivxs728qj" path="res://assets/sound_fx/general_sfx/game_over.wav" id="15_kv6yo"]
+[ext_resource type="AudioStream" uid="uid://bjl0g7urqv0b1" path="res://assets/sound_fx/general_sfx/boss_spawn.wav" id="16_h851w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nksfl"]
 size = Vector2(24, 54)
@@ -37,14 +39,14 @@ subpixel_positioning = 0
 [sub_resource type="CircleShape2D" id="CircleShape2D_gyybe"]
 radius = 53.0094
 
+[sub_resource type="Animation" id="Animation_vgqvc"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_1ie2o"]
 resource_name = "hurt"
 
 [sub_resource type="Animation" id="Animation_he7ve"]
 resource_name = "idle"
-
-[sub_resource type="Animation" id="Animation_vgqvc"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tw1gv"]
 _data = {
@@ -209,7 +211,15 @@ stream = ExtResource("14_s1oik")
 
 [node name="hit_sound" type="AudioStreamPlayer2D" parent="sfx"]
 
+[node name="game_over_sound" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("15_kv6yo")
+
+[node name="boss_spawn_sound" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("16_h851w")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_tw1gv")
 }
+
+[connection signal="tree_exiting" from="CanvasLayer/NewWeaponMenu" to="CanvasLayer/UpgradeMenu" method="_on_new_weapon_menu_tree_exiting"]

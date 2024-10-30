@@ -8,6 +8,7 @@ enum Target_Layers{
 
 @onready var animation_player : AnimationPlayer = %AnimationPlayer
 @onready var hurt_box : Area2D = %Area2D
+@onready var hit_sound : AudioStreamPlayer2D = $sfx/hit_sound
 
 
 @export var swing_rate : float 
@@ -41,6 +42,7 @@ func upgrade_size(value: float):
 func _on_hurt_box_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):
 		body.take_damage(damage)
+		hit_sound.play()
 		
 		
 func set_collision():

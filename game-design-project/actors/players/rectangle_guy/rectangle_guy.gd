@@ -7,6 +7,9 @@ var level_up_value : int = 300
 var xp_level : int = 0
 var is_paused : bool = false
 
+@onready var boss_spawn_sound : AudioStreamPlayer2D = $sfx/boss_spawn_sound
+@onready var game_over_sound : AudioStreamPlayer2D = $sfx/game_over_sound
+@onready var upgrade_sound : AudioStreamPlayer2D = $sfx/upgrade_sound
 @onready var level_up_sound : AudioStreamPlayer2D = $sfx/level_up_sound
 @onready var xp_sound : AudioStreamPlayer2D = $sfx/xp_sound
 @onready var pickup_area= $PickupArea/CollisionShape2D
@@ -40,11 +43,17 @@ func upgrade_pickup_area(value: float) -> void:
 	
 func destroy():
 	if health <= 0 :
+		game_over_sound.play()
 		var game_over_screen = preload("res://components/game_over_screen/game_over_screen.tscn")
 		var game_over_scene = game_over_screen.instantiate()
 		add_child(game_over_scene)
 		Engine.time_scale = 0
 		
+func play_upgrade_sound():
+	upgrade_sound.play()
+	
+func play_boss_spawn_sound():
+	boss_spawn_sound.play()
 #func _input(event):
 	#if Input.is_action_just_pressed("reload"):
 		#if Engine.time_scale == 0:

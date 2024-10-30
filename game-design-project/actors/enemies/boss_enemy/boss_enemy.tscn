@@ -241,6 +241,10 @@ script = ExtResource("3_g7dhe")
 
 [node name="XP_spawner" parent="." instance=ExtResource("4_0tnmn")]
 
+[node name="sfx" type="Node2D" parent="."]
+
+[node name="hurt_sound" type="AudioStreamPlayer2D" parent="sfx"]
+
 [connection signal="timeout" from="attack_interval_timer" to="." method="_on_attack_interval_timer_timeout"]
 [connection signal="body_entered" from="attack_area" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="attack_area" to="." method="_on_attack_area_body_exited"]

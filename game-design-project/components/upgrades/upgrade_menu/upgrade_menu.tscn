@@ -25,3 +25,5 @@ offset_bottom = 222.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
+
+[connection signal="child_exiting_tree" from="HBoxContainer" to="." method="_on_h_box_container_child_exiting_tree"]
