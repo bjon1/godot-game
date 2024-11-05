@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://u1ys8hof5xug"]
+
+[ext_resource type="PackedScene" uid="uid://j20356f0hfcb" path="res://components/upgrades/upgrade_buttons/player_buttons/base_player_button/base_player_button.tscn" id="1_2ko0d"]
+[ext_resource type="Script" path="res://components/upgrades/upgrade_buttons/player_buttons/player_speed/player_speed.gd" id="2_qyjca"]
+
+[node name="player_speed" instance=ExtResource("1_2ko0d")]
+text = "|Player|
+Increase
+Movement Speed"
+script = ExtResource("2_qyjca")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

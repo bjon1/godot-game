@@ -208,6 +208,12 @@ animations = [{
 
 [node name="test_dummy" instance=ExtResource("1_fitgo")]
 script = ExtResource("2_iqxr6")
+base_enemy_debug = false
+base_character_debug = false
+max_health = 100.0
+health = 100.0
+speed = 100.0
+attack_damage = 3.0
 
 [node name="damage_indicator" type="Label" parent="." index="0"]
 offset_left = -20.0

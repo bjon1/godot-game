@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfbgk4ao4lm0"]
+
+[ext_resource type="PackedScene" uid="uid://dw71f5l2xi4us" path="res://components/upgrades/upgrade_buttons/pistol_buttons/base_pistol_button/base_pistol_button.tscn" id="1_2pcki"]
+[ext_resource type="Script" path="res://components/upgrades/upgrade_buttons/pistol_buttons/pistol_max_ammo/pistol_max_ammo.gd" id="2_nm2fe"]
+
+[node name="pistol_max_ammo" instance=ExtResource("1_2pcki")]
+text = "|Pistol|
+Max
+Ammo"
+script = ExtResource("2_nm2fe")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
