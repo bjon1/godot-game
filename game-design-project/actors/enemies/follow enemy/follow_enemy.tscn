@@ -21,6 +21,7 @@ shader_parameter/flash_value = null
 
 [node name="follow_enemy" groups=["enemies"] instance=ExtResource("1_fhqgu")]
 z_index = 2
+knockback_value = 200.0
 speed = 200.0
 
 [node name="attack_interval_timer" parent="." index="1"]

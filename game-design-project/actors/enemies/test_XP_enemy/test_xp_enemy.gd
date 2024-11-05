@@ -34,3 +34,5 @@ func _physics_process(delta):
 
 	if position.distance_to(player.global_position) > 3:
 		position += steering_direction * speed * delta
+		
+	update_direction(direction_to_player)

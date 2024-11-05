@@ -8,10 +8,13 @@ Note:
 	Enemies exist on collision and mask layer 3
 '''
 
-enum{UP, DOWN}
+enum {UP, DOWN}
 @onready var weapons : Node2D = get_node("player_weapons")
 var current_weapon : Node2D
 
+# Knockback variables
+var knockback_velocity = Vector2.ZERO
+var knockback_friction = 0.9 # Controls how quickly knockback dissipates
 
 func _ready() -> void:
 	if weapons.get_child(0):
@@ -22,8 +25,8 @@ func _ready() -> void:
 		current_weapon.show()
 		current_weapon.set_process(true)
 
-func _process(_delta: float) -> void:
-	#var mouse_direction : Vector2 = (get_global_mouse_position() - global_position).normalized()
+func _physics_process(_delta: float) -> void:
+	# Handle player movement
 	var direction : float = Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * speed
@@ -34,9 +37,14 @@ func _process(_delta: float) -> void:
 	if direction:
 		velocity.y = direction * speed
 	else:
-		velocity.y = move_toward(velocity.x, 0, speed)
+		velocity.y = move_toward(velocity.y, 0, speed)
 		
-	#weapon select
+	# Apply knockback if present
+	if knockback_velocity.length() > 0.1:
+		velocity += knockback_velocity
+		knockback_velocity *= knockback_friction  # Apply friction to reduce knockback over time
+	
+	# Weapon select
 	if Input.is_action_just_pressed("scroll_up"):
 		_switch_weapon(UP)
 	if Input.is_action_just_pressed("scroll_down"):
@@ -47,7 +55,7 @@ func _process(_delta: float) -> void:
 		select_weapon(1)
 	
 	move_and_slide()
-	
+
 func _switch_weapon(direction : int) -> void:
 	var index : int = current_weapon.get_index()
 	if direction == UP:
@@ -67,4 +75,8 @@ func select_weapon(slot : int) -> void:
 		current_weapon.set_process(false)
 		current_weapon = weapons.get_child(slot)
 		current_weapon.set_process(true)
-		current_weapon.show()
+		current_weapon.show() 
+
+# Apply knockback to the player in a specific direction
+func apply_knockback(direction: Vector2, knockback_value: float) -> void:
+	knockback_velocity = direction * knockback_value
