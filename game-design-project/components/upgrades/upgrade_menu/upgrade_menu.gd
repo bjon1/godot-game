@@ -40,7 +40,9 @@ func enable():
 
 func _on_h_box_container_child_exiting_tree(node):
 	if node == get_child(0).get_child(0):
-		player.play_upgrade_sound()
+		if player:
+			player.play_upgrade_sound()
 	
 func _on_new_weapon_menu_tree_exiting():
-	player.play_upgrade_sound()
+	if player:
+		player.play_upgrade_sound()

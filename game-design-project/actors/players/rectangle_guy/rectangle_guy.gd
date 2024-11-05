@@ -50,10 +50,12 @@ func destroy():
 		Engine.time_scale = 0
 		
 func play_upgrade_sound():
-	upgrade_sound.play()
+	if upgrade_sound.is_inside_tree():
+		upgrade_sound.play()
 	
 func play_boss_spawn_sound():
-	boss_spawn_sound.play()
+	if upgrade_sound.is_inside_tree():
+		boss_spawn_sound.play()
 #func _input(event):
 	#if Input.is_action_just_pressed("reload"):
 		#if Engine.time_scale == 0:

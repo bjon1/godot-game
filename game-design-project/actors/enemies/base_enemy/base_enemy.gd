@@ -9,6 +9,7 @@ Note:
 '''
 
 @export var base_enemy_debug : bool = false
+@onready var attack_interval_timer : Timer = $attack_interval_timer
 
 var selected_target
 var damageable_targets_in_range : Array
@@ -27,7 +28,9 @@ func select_target() -> void:
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	#Area 2d monitors collision layer 2 (Players)
 	if body.has_method("take_damage"):
+		body.take_damage(attack_damage)
 		damageable_targets_in_range.append(body)
+		attack_interval_timer.start()
 		if base_enemy_debug: print("_on_attack_area_body_entered(): entity ", body.name, ": entered")
 		
 		
@@ -35,6 +38,7 @@ func _on_attack_area_body_exited(body: Node2D) -> void:
 	#Area 2d monitors collision layer 2 (Players)
 	if damageable_targets_in_range.has(body):
 		damageable_targets_in_range.erase(body)
+		attack_interval_timer.stop()
 		if base_enemy_debug: print("_on_attack_area_body_exited(): entity ", body.name, ": exited")
 		
 func _on_attack_interval_timer_timeout() -> void:

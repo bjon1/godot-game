@@ -10,7 +10,6 @@ extends Control
 @onready var reserve : Label = $ammo/reserve
 @onready var player_weapons = $"../../player_weapons"
 @onready var ammo = $ammo
-@onready var upgrade_sound = $"../../sfx/upgrade_sound"
 
 
 # Called when the node enters the scene tree for the first time.
