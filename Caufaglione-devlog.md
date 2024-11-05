@@ -1,6 +1,15 @@
-### 2024-10-29 - 1hrs: Increased difficulty
+### 2024-11-5 - 2hrs: More Polish
+* Added a hurt animation and fixed enemy damage timing
+* Added knockback for the player
+* Removed Quit button for Itch.io
+
+### 2024-10-30 - 1hrs: Sound Polish
+* Added a sound for upgrading weapons, leveling up, boss spawning, game over screen, and dealing and recieving damage
+
+### 2024-10-29 - 1hrs: Increased difficulty and Polish
 * Now every 10 levels a Boss spawns (different color, larger, more health, slower)
 * Every player level increase, enemies get 10 more health
+* Added a colored background and taking damage sound
   
 ### 2024-10-22 - 2hrs: New controls and HUD improvements
 * Player can now switch weapons with number keys "1" and "2" instead of only scroll wheel
