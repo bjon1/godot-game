@@ -3,6 +3,7 @@ class_name Main_Menu
 
 @onready var container = $HBoxContainer
 @onready var player : Rectangle_Guy = get_tree().root.get_child(0).get_node("rectangle_guy")
+@onready var level_up_label = $Level_up_label
 
 var upgrades_dict : Dictionary= {
 	"sword_damage": preload("res://components/upgrades/upgrade_buttons/sword_buttons/sword_damage/sword_damage.tscn"),
@@ -22,6 +23,7 @@ var pistol_upgrades_dict : Dictionary= {
 }
 
 func enable():
+	level_up_label.visible = true
 	# Get the keys from the dictionary
 	var keys = upgrades_dict.keys()
 	# Shuffle the keys randomly
@@ -42,7 +44,9 @@ func _on_h_box_container_child_exiting_tree(node):
 	if node == get_child(0).get_child(0):
 		if player:
 			player.play_upgrade_sound()
+			level_up_label.visible = false
 	
 func _on_new_weapon_menu_tree_exiting():
 	if player:
 		player.play_upgrade_sound()
+		level_up_label.visible = false
