@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://byro6jfks3ta1"]
+[gd_scene load_steps=2 format=3 uid="uid://byro6jfks3ta1"]
 
-[ext_resource type="PackedScene" uid="uid://dw71f5l2xi4us" path="res://components/upgrades/upgrade_buttons/pistol_buttons/base_pistol_button/base_pistol_button.tscn" id="1_1wug8"]
 [ext_resource type="Script" path="res://components/upgrades/upgrade_buttons/pistol_buttons/pistol_fire_rate/pistol_fire_rate.gd" id="2_i58kp"]
 
-[node name="pistol_fire_rate" instance=ExtResource("1_1wug8")]
+[node name="pistol_fire_rate" type="Button"]
+custom_minimum_size = Vector2(150, 0)
+anchors_preset = -1
+anchor_right = 0.130208
+anchor_bottom = 0.308642
 text = "|Pistol|
 Increase
 Fire Rate"
 script = ExtResource("2_i58kp")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="button_up" from="." to="." method="_on_button_up"]

@@ -1,4 +1,4 @@
-extends Base_Sword_Button
+extends Base_Upgrade_Button
 static var level : int = 0
 
 @onready var level_1 : CheckBox = $level_1

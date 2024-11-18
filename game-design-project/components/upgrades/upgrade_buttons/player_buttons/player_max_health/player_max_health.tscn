@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://byed08trq130i"]
+[gd_scene load_steps=2 format=3 uid="uid://byed08trq130i"]
 
-[ext_resource type="PackedScene" uid="uid://j20356f0hfcb" path="res://components/upgrades/upgrade_buttons/player_buttons/base_player_button/base_player_button.tscn" id="1_1uaxw"]
 [ext_resource type="Script" path="res://components/upgrades/upgrade_buttons/player_buttons/player_max_health/player_max_health.gd" id="2_xllgx"]
 
-[node name="player_max_health" instance=ExtResource("1_1uaxw")]
+[node name="player_max_health" type="Button"]
+custom_minimum_size = Vector2(150, 0)
+anchors_preset = -1
+anchor_right = 0.130208
+anchor_bottom = 0.308642
 text = "|Player|
 Max Health
 +50hp"
 script = ExtResource("2_xllgx")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="button_up" from="." to="." method="_on_button_up"]

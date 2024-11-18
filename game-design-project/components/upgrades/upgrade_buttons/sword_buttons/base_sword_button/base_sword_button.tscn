@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://l1ilgi5yqq1d"]
-
-[ext_resource type="PackedScene" uid="uid://dt4bgnepa2rk7" path="res://components/upgrades/upgrade_buttons/base_button/base_button.tscn" id="1_p2yim"]
-[ext_resource type="Script" path="res://components/upgrades/upgrade_buttons/sword_buttons/base_sword_button/base_sword_button.gd" id="2_6pojn"]
-
-[node name="Base_Sword_Button" instance=ExtResource("1_p2yim")]
-script = ExtResource("2_6pojn")

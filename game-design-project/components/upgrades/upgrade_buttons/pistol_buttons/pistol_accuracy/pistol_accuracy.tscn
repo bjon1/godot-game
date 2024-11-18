@@ -1,15 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://do7lg8tun7ymj"]
+[gd_scene load_steps=2 format=3 uid="uid://do7lg8tun7ymj"]
 
-[ext_resource type="PackedScene" uid="uid://dw71f5l2xi4us" path="res://components/upgrades/upgrade_buttons/pistol_buttons/base_pistol_button/base_pistol_button.tscn" id="1_yn5mr"]
 [ext_resource type="Script" path="res://components/upgrades/upgrade_buttons/pistol_buttons/pistol_accuracy/pistol_accuracy.gd" id="2_nkaii"]
 
-[node name="pistol_accuracy" instance=ExtResource("1_yn5mr")]
+[node name="pistol_accuracy" type="Button"]
+custom_minimum_size = Vector2(150, 0)
+anchors_preset = -1
+anchor_right = 0.130208
+anchor_bottom = 0.308642
 text = "|Pistol|
 Increase
 Accuracy"
 script = ExtResource("2_nkaii")
+metadata/_edit_use_anchors_ = true
 
-[node name="level_1" type="CheckBox" parent="." index="0"]
+[node name="level_1" type="CheckBox" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -19,7 +23,7 @@ offset_top = -24.0
 grow_vertical = 0
 mouse_filter = 2
 
-[node name="level_2" type="CheckBox" parent="." index="1"]
+[node name="level_2" type="CheckBox" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -30,7 +34,7 @@ offset_bottom = -19.0
 grow_vertical = 0
 mouse_filter = 2
 
-[node name="level_3" type="CheckBox" parent="." index="2"]
+[node name="level_3" type="CheckBox" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0

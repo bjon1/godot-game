@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://j20356f0hfcb"]
-
-[ext_resource type="PackedScene" uid="uid://dt4bgnepa2rk7" path="res://components/upgrades/upgrade_buttons/base_button/base_button.tscn" id="1_dqg2o"]
-[ext_resource type="Script" path="res://components/upgrades/upgrade_buttons/player_buttons/base_player_button/base_player_button.gd" id="2_sii0q"]
-
-[node name="Base_Player_Button" instance=ExtResource("1_dqg2o")]
-script = ExtResource("2_sii0q")

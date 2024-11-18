@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://gdhygsqo8lql"]
 
-[ext_resource type="Script" path="res://actors/players/rectangle_guy/rectangle_guy.gd" id="1_7rs8n"]
+[ext_resource type="Script" path="res://actors/players/rectangle_guy/rectangle_guy.gd" id="2_0k4na"]
 [ext_resource type="Script" path="res://actors/players/rectangle_guy/player_weapons.gd" id="2_l7p5m"]
 [ext_resource type="Texture2D" uid="uid://21k5m4xdh2cx" path="res://actors/players/rectangle_guy/sprites/rectangle_player.png" id="2_v1u8r"]
 [ext_resource type="Texture2D" uid="uid://bju5ed0dbvs0t" path="res://actors/players/rectangle_guy/sprites/rectangle_arm.png" id="3_1itks"]
@@ -82,7 +82,7 @@ _data = {
 [node name="rectangle_guy" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_7rs8n")
+script = ExtResource("2_0k4na")
 speed = 300.0
 
 [node name="player_weapons" type="Node2D" parent="."]

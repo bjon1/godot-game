@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dun3bgi7efq25"]
+[gd_scene load_steps=2 format=3 uid="uid://dun3bgi7efq25"]
 
-[ext_resource type="PackedScene" uid="uid://dw71f5l2xi4us" path="res://components/upgrades/upgrade_buttons/pistol_buttons/base_pistol_button/base_pistol_button.tscn" id="1_eygf5"]
 [ext_resource type="Script" path="res://components/upgrades/upgrade_buttons/pistol_buttons/pistol_damage/pistol_damage.gd" id="2_adsa3"]
 
-[node name="pistol_damage" instance=ExtResource("1_eygf5")]
+[node name="pistol_damage" type="Button"]
+custom_minimum_size = Vector2(150, 0)
+anchors_preset = -1
+anchor_right = 0.130208
+anchor_bottom = 0.308642
 text = "|Pistol|
 Increase
 Damage"
 script = ExtResource("2_adsa3")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="button_up" from="." to="." method="_on_button_up"]

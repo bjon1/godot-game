@@ -1,5 +1,5 @@
 extends Control
-class_name Main_Menu
+class_name Upgrade_Menu
 
 @onready var container = $HBoxContainer
 @onready var player : Rectangle_Guy = get_tree().root.get_child(0).get_node("rectangle_guy")
@@ -22,6 +22,8 @@ var pistol_upgrades_dict : Dictionary= {
 	"pistol_reload_speed": preload("res://components/upgrades/upgrade_buttons/pistol_buttons/pistol_reload_speed/pistol_reload_speed.tscn"),
 }
 
+var unlock_auto_pistol = preload("res://components/upgrades/upgrade_buttons/pistol_buttons/unlock_pistol/unlock_pistol_button.tscn")
+
 func enable():
 	level_up_label.visible = true
 	# Get the keys from the dictionary
@@ -30,23 +32,24 @@ func enable():
 	keys.shuffle()
 	# Select the first three keys
 	var selected_keys = keys.slice(0, 3)
-	for key in selected_keys:
-		# Instance the scene associated with the key and add it to the container
-		var upgrade_scene = upgrades_dict[key].instantiate()
-		container.add_child(upgrade_scene)
-		
-		#var spacer : Control = Control.new()
-		#spacer.custom_minimum_size = Vector2(20,0)
-		#container.add_child(spacer)
-
-
-func _on_h_box_container_child_exiting_tree(node):
-	if node == get_child(0).get_child(0):
-		if player:
-			player.play_upgrade_sound()
-			level_up_label.visible = false
 	
-func _on_new_weapon_menu_tree_exiting():
-	if player:
-		player.play_upgrade_sound()
-		level_up_label.visible = false
+	if player.xp_level == 5:
+		var unlock_scene = unlock_auto_pistol.instantiate()
+		var spacer : Control = Control.new()
+		spacer.custom_minimum_size = Vector2(130,0)
+		container.add_child(spacer)
+		container.add_child(unlock_scene)
+	else:
+		for key in selected_keys:
+			# Instance the scene associated with the key and add it to the container
+			var upgrade_scene = upgrades_dict[key].instantiate()
+			container.add_child(upgrade_scene)
+			
+			#var spacer : Control = Control.new()
+			#spacer.custom_minimum_size = Vector2(20,0)
+			#container.add_child(spacer)
+
+func closing():
+	player.play_upgrade_sound()
+	level_up_label.visible = false
+	

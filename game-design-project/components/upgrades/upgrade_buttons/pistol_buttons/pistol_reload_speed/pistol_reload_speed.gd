@@ -1,6 +1,7 @@
-extends Base_Pistol_Button
+extends Base_Upgrade_Button
 
 static var level : int = 0
+@onready var auto_pistol = get_tree().root.get_child(0).get_node("rectangle_guy/player_weapons/auto_pistol")
 @onready var level_1 = $level_1
 @onready var level_2 = $level_2
 @onready var level_3 = $level_3
