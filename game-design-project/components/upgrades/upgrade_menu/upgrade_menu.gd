@@ -39,6 +39,7 @@ func enable():
 		spacer.custom_minimum_size = Vector2(130,0)
 		container.add_child(spacer)
 		container.add_child(unlock_scene)
+		container.get_child(1).grab_focus()
 	else:
 		for key in selected_keys:
 			# Instance the scene associated with the key and add it to the container
@@ -48,6 +49,7 @@ func enable():
 			#var spacer : Control = Control.new()
 			#spacer.custom_minimum_size = Vector2(20,0)
 			#container.add_child(spacer)
+		container.get_child(0).grab_focus()
 
 func closing():
 	player.play_upgrade_sound()
