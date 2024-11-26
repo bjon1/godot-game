@@ -16,13 +16,16 @@ func _handle_collision() -> void:
 		return
 	if is_exploding == false:
 		explode()
-		
+
+func _on_hurt_box_body_entered(body: Node2D) -> void:
+	if is_exploding == false:
+		explode()
+	
 func explode() -> void:
 	is_exploding = true
 	
-	blast_area_collision.get_shape().set_radius(res.blast_radius)
+	blast_area_collision.get_shape().set_radius(res.blast_radius/2)
 	var blast_target : Array = blast_area.get_overlapping_bodies()
-	
 	for target in blast_target:
 		if target.has_method("take_damage"):	target.take_damage(res.damage)
 		elif target.is_class("TileMapLayer"):	target.explode_tile_area(global_position, res.tile_damage, res.blast_mask)

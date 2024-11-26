@@ -15,5 +15,6 @@ one_way_collision = true
 [node name="player_weapons" type="Node2D" parent="." index="1"]
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
+zoom = Vector2(0.1, 0.1)
 
 [node name="Node" type="Node" parent="." index="5"]

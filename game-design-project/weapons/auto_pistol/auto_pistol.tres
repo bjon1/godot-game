@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c337xrxh1k1t2" path="res://weapons/bullets/auto_pistol_bullet/auto_pistol_bullet.tscn" id="1_4ywwr"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_2oehc")
 has_infinite_ammo = false
 weapon_target = 1

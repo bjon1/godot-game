@@ -712,19 +712,19 @@ animations = [{
 script = ExtResource("2_0yrb1")
 res = ExtResource("3_tf8c7")
 
-[node name="gun_shot" parent="sfx" index="0"]
-stream = ExtResource("5_agtl4")
-
-[node name="AnimationPlayer" parent="." index="1"]
+[node name="AnimationPlayer" parent="." index="0"]
 libraries = {
 "": SubResource("AnimationLibrary_bqp0y")
 }
 autoplay = "idle"
 
-[node name="AnimatedSprite2D" parent="." index="2"]
+[node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(16, 0)
 sprite_frames = SubResource("SpriteFrames_kfbxt")
 animation = &"shoot"
 
-[node name="barrel_position" parent="." index="4"]
+[node name="barrel_position" parent="." index="3"]
 position = Vector2(56, -5)
+
+[node name="gun_shot" parent="barrel_position" index="0"]
+stream = ExtResource("5_agtl4")

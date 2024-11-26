@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bptm70hk2ejrt"]
+
+[ext_resource type="Script" path="res://hash_set.gd" id="1_v5tta"]
+
+[node name="hash_set" type="Node"]
+script = ExtResource("1_v5tta")

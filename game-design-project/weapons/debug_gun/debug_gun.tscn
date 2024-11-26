@@ -5,7 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c337xrxh1k1t2" path="res://weapons/bullets/auto_pistol_bullet/auto_pistol_bullet.tscn" id="3_j0lgs"]
 [ext_resource type="Script" path="res://resources/gun_resource.gd" id="4_3vwv2"]
 
-[sub_resource type="Resource" id="Resource_5viy8"]
+[sub_resource type="Resource" id="Resource_ah5fu"]
+resource_local_to_scene = true
 script = ExtResource("4_3vwv2")
 has_infinite_ammo = false
 weapon_target = 1
@@ -18,7 +19,7 @@ out_of_ammo_animation = ""
 automatic_fire = true
 ammo_ammount = 10
 magazine_size = 10
-ammo_reserve = 100
+ammo_reserve = 100000000
 max_reserve_ammo = 0
 bullet_scene = ExtResource("3_j0lgs")
 damage = 13.0
@@ -37,7 +38,7 @@ charge_time = 0.0
 
 [node name="debug_gun" instance=ExtResource("1_bpufp")]
 script = ExtResource("2_54bea")
-res = SubResource("Resource_5viy8")
+res = SubResource("Resource_ah5fu")
 
 [node name="debug_text" type="Label" parent="." index="5"]
 offset_right = 40.0

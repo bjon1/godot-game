@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Gun_Resource" load_steps=3 format=3 uid="uid://se3qkjnnovif"]
 
-[ext_resource type="PackedScene" uid="uid://co1boyc3d5utd" path="res://weapons/bullets/trigonometric_bullet/trigonometric_bullet.tscn" id="1_su4n3"]
+[ext_resource type="PackedScene" uid="uid://bya1curklquun" path="res://weapons/bullets/base_bullet/base_bullet.tscn" id="1_fyrcs"]
 [ext_resource type="Script" path="res://resources/gun_resource.gd" id="2_6un5p"]
 
 [resource]
@@ -19,15 +19,15 @@ ammo_ammount = 10
 magazine_size = 0
 ammo_reserve = 50
 max_reserve_ammo = 0
-bullet_scene = ExtResource("1_su4n3")
-damage = 200.0
+bullet_scene = ExtResource("1_fyrcs")
+damage = 100.0
 accuracy = 0.0
 bullet_count = 4
 bullet_spread = 90.0
 bullet_speed = 800.0
-tile_damage = 0
-tile_penetration = 10
-enemy_penetration = 1000
+tile_damage = 1
+tile_penetration = 0
+enemy_penetration = 0
 blast_radius = 0.0
 fire_rate = 0.0
 burst_delay = 0.0

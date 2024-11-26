@@ -22,8 +22,8 @@ var current_state : states = states.IDLE
 @onready var reload_progress_bar : ProgressBar = $reload_progress_bar
 
 #SFX initialization
-@onready var gun_shot : AudioStreamPlayer2D = $sfx/gun_shot
-@onready var no_ammo : AudioStreamPlayer2D = $sfx/no_ammo
+@onready var gun_shot : AudioStreamPlayer2D = $barrel_position/gun_shot
+@onready var no_ammo : AudioStreamPlayer2D = $barrel_position/no_ammo
 
 #used to determine animation playback speed
 @onready var reload_animation_length : float = animation_player.get_animation("reload").length

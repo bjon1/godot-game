@@ -101,6 +101,7 @@ enum Target_Layers{
 func initialize():
 	#call from func _ready() on the class using this resource
 	bullet_spread = deg_to_rad(bullet_spread)
+	_calculate_blast_mask()
 	
 func get_bullet_resource() -> Bullet_Resource:
 	var bullet_resource : Bullet_Resource = Bullet_Resource.new()

@@ -55,15 +55,6 @@ animations = [{
 script = ExtResource("1_eq05o")
 res = ExtResource("2_5yahl")
 
-[node name="sfx" type="Node" parent="."]
-
-[node name="gun_shot" type="AudioStreamPlayer2D" parent="sfx"]
-max_polyphony = 10
-
-[node name="no_ammo" type="AudioStreamPlayer2D" parent="sfx"]
-stream = ExtResource("3_2uuoq")
-max_polyphony = 5
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../barrel_position")
 libraries = {
@@ -83,3 +74,13 @@ offset_bottom = -12.0
 show_percentage = false
 
 [node name="barrel_position" type="Node2D" parent="."]
+
+[node name="gun_shot" type="AudioStreamPlayer2D" parent="barrel_position"]
+max_polyphony = 10
+
+[node name="no_ammo" type="AudioStreamPlayer2D" parent="barrel_position"]
+stream = ExtResource("3_2uuoq")
+max_polyphony = 5
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true

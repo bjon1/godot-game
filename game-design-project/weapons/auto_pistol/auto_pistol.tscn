@@ -1,14 +1,46 @@
-[gd_scene load_steps=58 format=3 uid="uid://btfuaag7avnui"]
+[gd_scene load_steps=60 format=3 uid="uid://btfuaag7avnui"]
 
 [ext_resource type="PackedScene" uid="uid://c42ch6c6givx4" path="res://weapons/base_gun/base_gun.tscn" id="1_jdcjx"]
 [ext_resource type="Script" path="res://weapons/auto_pistol/auto_pistol.gd" id="2_3eote"]
-[ext_resource type="Resource" uid="uid://cf7m4ku3745me" path="res://weapons/auto_pistol/auto_pistol.tres" id="3_1sx5g"]
 [ext_resource type="Texture2D" uid="uid://bsyq4weaenrpt" path="res://assets/pixel_art/weapons/Auto_Pistol/reload_auto_pistol_2.png" id="3_2gbkw"]
+[ext_resource type="PackedScene" uid="uid://bya1curklquun" path="res://weapons/bullets/base_bullet/base_bullet.tscn" id="3_r8ec0"]
 [ext_resource type="Texture2D" uid="uid://q32iybtgaydn" path="res://assets/pixel_art/weapons/Auto_Pistol/no_ammo_auto_pistol.png" id="4_fvdkr"]
 [ext_resource type="Texture2D" uid="uid://d1ohy3y751cvr" path="res://assets/pixel_art/weapons/Auto_Pistol/shoot_auto_pistol_1.png" id="4_ta7be"]
+[ext_resource type="Script" path="res://resources/gun_resource.gd" id="4_xpuc2"]
 [ext_resource type="Texture2D" uid="uid://dmwvq83rl41bn" path="res://assets/pixel_art/weapons/Auto_Pistol/reload_auto_pistol_1.png" id="6_fecj5"]
 [ext_resource type="Texture2D" uid="uid://end75kqxodvc" path="res://assets/pixel_art/weapons/Auto_Pistol/shoot_auto_pistol_2.png" id="8_y60y1"]
 [ext_resource type="AudioStream" uid="uid://btoya5lnn51r8" path="res://assets/sound_fx/weapons_sfx/auto_pistol_shot.wav" id="9_mtrhh"]
+
+[sub_resource type="Resource" id="Resource_rk5gv"]
+resource_local_to_scene = true
+script = ExtResource("4_xpuc2")
+has_infinite_ammo = false
+weapon_target = 1
+weapon_name = "base gun"
+activate_animation = ""
+shoot_animation = ""
+reload_animation = ""
+deactivate_animation = ""
+out_of_ammo_animation = ""
+automatic_fire = false
+ammo_ammount = 10
+magazine_size = 0
+ammo_reserve = 50
+max_reserve_ammo = 0
+bullet_scene = ExtResource("3_r8ec0")
+damage = 100.0
+accuracy = 0.0
+bullet_count = 4
+bullet_spread = 90.0
+bullet_speed = 800.0
+tile_damage = 1
+tile_penetration = 0
+enemy_penetration = 0
+blast_radius = 0.0
+fire_rate = 0.0
+burst_delay = 0.0
+reload_speed = 0.0
+charge_time = 0.0
 
 [sub_resource type="Animation" id="Animation_v08t0"]
 length = 0.001
@@ -476,25 +508,24 @@ animations = [{
 
 [node name="auto_pistol" instance=ExtResource("1_jdcjx")]
 script = ExtResource("2_3eote")
-res = ExtResource("3_1sx5g")
+res = SubResource("Resource_rk5gv")
 
-[node name="gun_shot" parent="sfx" index="0"]
-stream = ExtResource("9_mtrhh")
-
-[node name="AnimationPlayer" parent="." index="1"]
+[node name="AnimationPlayer" parent="." index="0"]
 libraries = {
 "": SubResource("AnimationLibrary_rfh02")
 }
 autoplay = "idle"
 
-[node name="AnimatedSprite2D" parent="." index="2"]
+[node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_tuile")
 animation = &"reload"
-frame = 1
 
-[node name="reload_progress_bar" parent="." index="3"]
+[node name="reload_progress_bar" parent="." index="2"]
 offset_top = -32.0
 offset_bottom = -28.0
 
-[node name="barrel_position" parent="." index="4"]
+[node name="barrel_position" parent="." index="3"]
 position = Vector2(17, -14)
+
+[node name="gun_shot" parent="barrel_position" index="0"]
+stream = ExtResource("9_mtrhh")

@@ -71,7 +71,7 @@ func explode_tile_area(center : Vector2, damage_amount : int, blast_mask : Array
 		var damage : int = max(int(damage_amount * damage_scale), 1)
 		
 		damage_tile(Vector2(x+h, y+k), damage)		#Quadrant 1
-		damage_tile(Vector2(-x+h, -y+k), damage)	#Quadrant 3	
+		damage_tile(Vector2(-x+h, -y+k), damage)	#Quadrant 3
 		if y!=0 and x!=0:	#prevent overlap between quadrants
 			damage_tile(Vector2(-x+h, y+k), damage)	#Quadrant 2
 			damage_tile(Vector2(x+h, -y+k), damage)	#Quadrant 4
