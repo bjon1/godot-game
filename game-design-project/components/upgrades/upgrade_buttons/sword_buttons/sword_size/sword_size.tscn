@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4nxduxn0co4k"]
+
+[ext_resource type="Script" path="res://components/upgrades/upgrade_buttons/sword_buttons/sword_size/sword_size.gd" id="2_rg03b"]
+
+[node name="sword_size" type="Button"]
+custom_minimum_size = Vector2(150, 0)
+anchors_preset = -1
+anchor_right = 0.130208
+anchor_bottom = 0.308642
+text = "|Sword|
+Increase 
+Size"
+script = ExtResource("2_rg03b")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

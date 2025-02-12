@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0v03nt4uprj3"]
+
+[ext_resource type="PackedScene" uid="uid://gdhygsqo8lql" path="res://actors/players/rectangle_guy/rectangle_guy.tscn" id="1_cjchs"]
+[ext_resource type="Script" path="res://worlds/test_world_2/path_2d.gd" id="3_4kst8"]
+
+[sub_resource type="Curve2D" id="Curve2D_rxvdj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -285, -156, 0, 0, 0, 0, 1052, -156, 0, 0, 0, 0, 1050, 676, 0, 0, 0, 0, -299, 681, 0, 0, 0, 0, -285, -156)
+}
+point_count = 5
+
+[node name="test_world_2" type="Node2D"]
+
+[node name="wasd" type="Label" parent="."]
+offset_left = 33.0
+offset_top = 194.0
+offset_right = 322.0
+offset_bottom = 331.0
+theme_override_colors/font_color = Color(0.631373, 0.8, 0.647059, 1)
+theme_override_font_sizes/font_size = 100
+text = "WASD"
+
+[node name="rectangle_guy" parent="." instance=ExtResource("1_cjchs")]
+position = Vector2(386, 269)
+
+[node name="Path2D" type="Path2D" parent="rectangle_guy"]
+position = Vector2(-386, -269)
+curve = SubResource("Curve2D_rxvdj")
+script = ExtResource("3_4kst8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="rectangle_guy/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-285, -156)
+
+[node name="spawn_timer" type="Timer" parent="rectangle_guy/Path2D"]
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="rectangle_guy"]
+z_index = -1
+offset_left = -591.0
+offset_top = -329.0
+offset_right = 590.0
+offset_bottom = 332.0
+color = Color(0.560784, 0.72549, 0.588235, 1)
+
+[connection signal="timeout" from="rectangle_guy/Path2D/spawn_timer" to="rectangle_guy/Path2D" method="_on_spawn_timer_timeout"]

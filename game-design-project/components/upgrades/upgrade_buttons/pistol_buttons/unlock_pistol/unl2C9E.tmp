@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbe3jbu2ju5tv"]
+
+[ext_resource type="Script" path="res://components/upgrades/upgrade_buttons/pistol_buttons/unlock_pistol/unlock_pistol_button.gd" id="1_lkum8"]
+
+[node name="unlock_pistol_button" type="Button"]
+offset_right = 150.0
+offset_bottom = 200.0
+text = "|New Weapon|
+Auto Pistol"
+script = ExtResource("1_lkum8")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

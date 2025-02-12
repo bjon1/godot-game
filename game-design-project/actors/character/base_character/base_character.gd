@@ -14,6 +14,7 @@ Note:
 @export var attack_damage : float = 3.0
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
+@onready var hurt_sound : AudioStreamPlayer2D = $sfx/hurt_sound
 
 var the_world
 
@@ -38,7 +39,11 @@ func clamp_to_map() -> void:
 func take_damage(damage_amount : float) -> void:
 	if health > 0:
 		animation_player.play("hurt")
-		health -= damage_amount
+		hurt_sound.play()
+		if damage_amount > health:
+			health = 0
+		else:
+			health -= damage_amount
 		if base_character_debug: print("take_damage(): health ", self.name + ": ", health)
 		destroy() #check to destroy character
 		animation_player.queue("idle")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://chxdevk8t2ru4"]
+
+[ext_resource type="Script" path="res://components/upgrades/upgrade_buttons/sword_buttons/sword_damage/sword_damage.gd" id="2_m28uf"]
+
+[node name="sword_damage" type="Button"]
+custom_minimum_size = Vector2(150, 0)
+anchors_preset = -1
+anchor_right = 0.130208
+anchor_bottom = 0.308642
+text = "|Sword|
+Increase
+Damage"
+script = ExtResource("2_m28uf")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

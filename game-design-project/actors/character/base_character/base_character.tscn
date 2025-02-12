@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://actors/character/base_character/base_character.gd" id="1_rq4qx"]
 [ext_resource type="Shader" path="res://misc/shaders/hit_flash.gdshader" id="2_hyaey"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_36w8l"]
-size = Vector2(75, 70)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6kta"]
+size = Vector2(110.5, 108)
 
 [sub_resource type="Animation" id="Animation_kfdmb"]
 length = 0.001
@@ -57,7 +57,7 @@ tracks/0/keys = {
 resource_name = "idle"
 step = 0.05
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ewosl"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6jhv1"]
 _data = {
 "RESET": SubResource("Animation_kfdmb"),
 "flash": SubResource("Animation_cf5to"),
@@ -70,19 +70,19 @@ shader = ExtResource("2_hyaey")
 shader_parameter/flash_color = Color(1, 1, 1, 0.658824)
 shader_parameter/flash_value = null
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_u7co3"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_pguq7"]
 
 [node name="base_character" type="CharacterBody2D"]
 script = ExtResource("1_rq4qx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_36w8l")
+shape = SubResource("RectangleShape2D_i6kta")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ewosl")
+"": SubResource("AnimationLibrary_6jhv1")
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_scags")
-sprite_frames = SubResource("SpriteFrames_u7co3")
+sprite_frames = SubResource("SpriteFrames_pguq7")

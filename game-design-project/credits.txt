@@ -1,0 +1,23 @@
+--Credits--
+
+-Medieval Weapons by MedievalMore 
+
+https://medievalmore.itch.io/free-weapon-icons 
+
+-2d Pixel Art Training Dummy Sprites by Elthen's Pixel Art Shop 
+
+https://elthen.itch.io/2d-pixel-art-training-dummy 
+
+-GUNSV1.0 - asset pack by Arcade Island 
+
+https://arcadeisland.itch.io/guns-asset-pack-v1
+
+-XP is a shader in Godot.
+
+-Main character created with Gimp.
+
+Sound Effects:
+
+- "Auto Pistol Shot" by gsparrysound https://freesound.org/s/591428/ [Attribution 4.0]
+
+-All other sounds created with the online 8 bit sound maker and sfx generator, https://sfxr.me/

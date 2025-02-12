@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt4bgnepa2rk7"]
+
+[ext_resource type="Script" path="res://components/upgrades/upgrade_buttons/base_upgrade_button/base_upgrade_button.gd" id="1_ntqbg"]
+
+[node name="Base_Upgrade_Button" type="Button"]
+custom_minimum_size = Vector2(150, 0)
+anchors_preset = -1
+anchor_right = 0.130208
+anchor_bottom = 0.308642
+script = ExtResource("1_ntqbg")
+metadata/_edit_use_anchors_ = true

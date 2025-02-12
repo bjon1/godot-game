@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1gbh7rsrwfms"]
+
+[ext_resource type="Script" path="res://components/upgrades/upgrade_buttons/sword_buttons/sword_speed/sword_speed.gd" id="2_ka3wy"]
+
+[node name="sword_speed" type="Button"]
+custom_minimum_size = Vector2(150, 0)
+anchors_preset = -1
+anchor_right = 0.130208
+anchor_bottom = 0.308642
+text = "|Sword|
+Increase
+Speed
+"
+script = ExtResource("2_ka3wy")
+metadata/_edit_use_anchors_ = true
+
+[node name="level_1" type="CheckBox" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -24.0
+grow_vertical = 0
+focus_mode = 0
+mouse_filter = 2
+
+[node name="level_2" type="CheckBox" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -43.0
+offset_bottom = -19.0
+grow_vertical = 0
+focus_mode = 0
+mouse_filter = 2
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
